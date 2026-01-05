@@ -71,7 +71,11 @@ async def analyze_post_skill(
 2. 用户痛点：从笔记中提取的用户痛点或需求
 3. 解决方案：笔记中提到的解决方案或产品
 4. 市场信号：笔记反映的市场趋势或信号
-5. 情感倾向：positive(正面)/negative(负面)/neutral(中性)
+5. 情感倾向（sentiment）：
+   - positive（正面）：笔记内容积极、充满希望、表达认可或支持
+   - negative（负面）：笔记内容消极、表达担忧、不满或反对
+   - neutral（中性）：笔记内容客观描述，或无明显情感倾向
+   注意：只有当笔记确实没有明显情感倾向时才使用neutral，不要过度使用
 6. 互动评分：根据点赞/收藏/评论数给出1-10分的互动评分
 
 请以 JSON 格式返回：
@@ -227,8 +231,15 @@ async def analyze_post_with_comments_skill(
 4. 市场信号：从互动和讨论中识别的市场趋势或信号
 5. 用户洞察：从评论中提取的关键用户洞察
 6. 用户需求：评论中用户表达的具体需求
-7. 评论情感：positive(正面)/negative(负面)/neutral(中性) - 基于评论整体情感
-8. 整体情感：综合帖子和评论的整体情感倾向
+7. 评论情感（feedback_sentiment）：基于评论整体情感判断
+   - positive（正面）：评论中包含赞美、满意、推荐、期待等积极情绪
+   - negative（负面）：评论中包含抱怨、不满、批评、担忧等消极情绪
+   - neutral（中性）：评论主要是客观描述、询问、或情绪不明显
+   注意：只有当评论确实没有明显情感倾向时才使用neutral，不要过度使用
+8. 整体情感（sentiment）：综合帖子和评论的整体情感倾向
+   - positive（正面）：整体氛围积极，用户表达出兴趣、认可或支持
+   - negative（负面）：整体氛围消极，用户表达出不满、担忧或反对
+   - neutral（中性）：整体内容客观，或积极与消极情绪相当
 9. 互动评分：1-10分，基于点赞/收藏/评论数量和质量
 
 请以 JSON 格式返回：
@@ -367,7 +378,11 @@ async def analyze_comments_skill(
 请分析：
 1. 用户洞察：从评论中提取的关键洞察
 2. 常见主题：评论中反复出现的主题
-3. 情感分布：positive/negative/neutral 的比例
+3. 情感分布：统计评论中的情感倾向
+   - positive（正面）：包含赞美、满意、推荐、期待等积极情绪的评论
+   - negative（负面）：包含抱怨、不满、批评、担忧等消极情绪的评论
+   - neutral（中性）：主要是客观描述、询问、或情绪不明显的评论
+   注意：只有当评论确实没有明显情感倾向时才归类为neutral
 4. 用户需求：用户表达的具体需求
 5. 痛点抱怨：用户的痛点或抱怨
 
@@ -724,7 +739,7 @@ async def analyze_comments_with_tags_skill(
     max_retries: int = 2
 ) -> Dict[str, Any]:
     """
-    使用标签体系分析评论（基于 functions.txt 的方法）
+    使用标签体系分析评论
 
     分两个步骤：
     1. 生成标签体系 (generate_doc_description)
@@ -741,11 +756,20 @@ async def analyze_comments_with_tags_skill(
     """
     logger.info(f"Starting tag-based comments analysis for {len(posts_with_comments)} posts")
 
-    # 第一步：收集所有评论文本
+    # 第一步：收集相关帖子的评论文本 (only from posts relevant to the business idea)
     all_comments = []
     for post in posts_with_comments:
-        comments = post.get('comments_data', [])
-        all_comments.extend(comments)
+        # Check if the post has been analyzed and is relevant to the business idea
+        # The post should have analysis data indicating relevance
+        # If analysis is not available, we'll include the comments (conservative approach)
+        analysis = post.get('analysis', {})
+        is_relevant = analysis.get('relevant', True)  # Default to True if not specified
+
+        if is_relevant:
+            comments = post.get('comments_data', [])
+            all_comments.extend(comments)
+        else:
+            logger.debug(f"Skipping comments from post {post.get('note_id', 'unknown')} as it is not relevant to the business idea")
 
     total_comments = len(all_comments)
     if total_comments == 0:
@@ -778,7 +802,7 @@ async def analyze_comments_with_tags_skill(
 
     # 第二步：生成标签体系
     logger.info("Step 1: Generating tag system from comments...")
-    tag_generation_prompt = f"""# AI提示词：构建用户评论分析标签体系
+    tag_generation_prompt = f"""# 构建用户评论分析标签体系
 
 ## 您的任务：
 您是一位经验丰富的产品分析专家和自然语言处理专家。您的任务是基于我提供的一批用户评论文本，为该产品构建一个结构化的、多层级的分析标签体系。这个标签体系将用于后续对每条评论进行细致的分类和打标，以便深入洞察用户需求和反馈。
@@ -925,18 +949,44 @@ async def analyze_comments_with_tags_skill(
 ### {tag_system_str}
 ###
 
-要求：
-- 当评价满足标签则保留标签
-- 当评价与标签无关则去掉标签
-- 当评价与标签相反（负面评价），则记为 "-标签名" 作为标签
-- 返回原来的标签体系结构，但只保留匹配的标签
+你的任务：从标签体系中找出与这条评论相关的标签。
 
-以下是评价内容：
+匹配规则：
+1. 关键词匹配：如果评论中包含标签的关键词或相关词汇，则保留该标签
+   - 例如：评论"邮寄多少啊"包含"邮寄"，应匹配"邮寄需求"标签
+   - 例如：评论"买点"包含"买"，应匹配"购买动机"相关标签
+   - 例如：评论"晒桔皮"包含"晒"，应匹配"晒干效果好"标签
+
+2. 语义相关：即使没有直接关键词，如果评论表达的意思与标签相关，也应保留
+   - 例如：评论"不能寄"与"邮寄需求"相关
+   - 例如：评论"好多钱一斤"与"价格感知"相关
+
+3. 负面评价：如果评论表达负面情绪，在标签名前加"-"（如"-价格合理"）
+
+4. 宽松匹配：宁可多保留相关标签，也不要漏掉可能相关的标签
+
+重要：请返回一个包含四个一级标签（人群场景、功能价值、保障价值、体验价值）的 JSON 对象，每个一级标签下包含相关的二级标签和三级标签列表。如果没有相关标签，该标签下应为空对象 {{}}。
+
+评论内容：
 ##
 {comment_text}
 ##
 
-请直接返回 JSON 格式的标签分析结果，不要包含任何其他文本。
+请返回如下格式的 JSON（不要包含任何其他文本）：
+{{
+  "人群场景": {{
+    "用户需求与痛点-痛点问题": ["相关标签1", "相关标签2"],
+    "用户需求与痛点-使用场景": ["相关标签1"]
+  }},
+  "功能价值": {{
+    "产品反馈-产品优点": ["相关标签1"],
+    "产品反馈-产品缺点": ["相关标签1"]
+  }},
+  "保障价值": {{}},
+  "体验价值": {{
+    "价格感知": ["相关标签1"]
+  }}
+}}
 """
 
                 try:
@@ -946,23 +996,40 @@ async def analyze_comments_with_tags_skill(
                         response_model=TagSystemGeneration  # 使用 TagSystemGeneration 模型
                     )
 
-                    # 转换为字典
+                    # 转换为字典 - 改进解析逻辑
                     if hasattr(comment_tags_result, 'model_dump'):
                         comment_tags = comment_tags_result.model_dump()
                     elif isinstance(comment_tags_result, str):
                         comment_tags = _extract_json_from_response(comment_tags_result)
-                    else:
+                    elif isinstance(comment_tags_result, dict):
                         comment_tags = comment_tags_result
+                    else:
+                        logger.warning(f"Unexpected comment_tags_result type: {type(comment_tags_result)}")
+                        comment_tags = {}
 
-                    # 统计标签应用
-                    for category_key, category_value in comment_tags.items():
-                        if isinstance(category_value, dict):
-                            for subcategory_key, tags_list in category_value.items():
-                                if isinstance(tags_list, list):
-                                    for tag in tags_list:
-                                        tag_key = f"{category_key}.{subcategory_key}.{tag}"
+                    # Debug: Log the actual response to understand what we're getting
+                    logger.debug(f"Tag analysis result for comment {comment.get('comment_id')}: {type(comment_tags)} - {comment_tags}")
+
+                    # 统计标签应用 - 改进统计逻辑
+                    if isinstance(comment_tags, dict):
+                        for category_key, category_value in comment_tags.items():
+                            if isinstance(category_value, dict):
+                                for subcategory_key, tags_list in category_value.items():
+                                    if isinstance(tags_list, list):
+                                        for tag in tags_list:
+                                            if isinstance(tag, str) and tag.strip():  # Only count non-empty tags
+                                                tag_key = f"{category_key}.{subcategory_key}.{tag}"
+                                                tag_statistics[tag_key] = tag_statistics.get(tag_key, 0) + 1
+                                                total_tags_applied += 1
+                                    elif isinstance(tags_list, str) and tags_list.strip():  # Handle case where tags_list is a single string
+                                        tag_key = f"{category_key}.{subcategory_key}.{tags_list}"
                                         tag_statistics[tag_key] = tag_statistics.get(tag_key, 0) + 1
                                         total_tags_applied += 1
+                            else:
+                                logger.debug(f"Category value is not a dict: {category_key} = {category_value}")
+                    else:
+                        logger.warning(f"Invalid comment_tags format for comment {comment.get('comment_id')}: {type(comment_tags)}")
+                        comment_tags = {}
 
                     analyzed_results.append({
                         "comment_id": comment.get('comment_id'),
@@ -971,6 +1038,8 @@ async def analyze_comments_with_tags_skill(
 
                 except Exception as e:
                     logger.warning(f"Failed to analyze comment {comment.get('comment_id')}: {e}")
+                    import traceback
+                    logger.debug(f"Traceback:\n{''.join(traceback.format_tb(e.__traceback__))}")
                     # 失败的评论添加空标签
                     analyzed_results.append({
                         "comment_id": comment.get('comment_id'),
@@ -978,12 +1047,46 @@ async def analyze_comments_with_tags_skill(
                         "error": str(e)
                     })
 
-        # 构建最终的标签分析结果
+        # 聚合所有评论中匹配到的标签
+        aggregated_tags = {
+            "人群场景": {},
+            "功能价值": {},
+            "保障价值": {},
+            "体验价值": {}
+        }
+
+        for result in analyzed_results:
+            comment_tags = result.get("tags", {})
+            if isinstance(comment_tags, dict):
+                for category_key, category_value in comment_tags.items():
+                    # 确保分类键存在于聚合字典中
+                    if category_key not in aggregated_tags:
+                        aggregated_tags[category_key] = {}
+                    
+                    if isinstance(category_value, dict):
+                        for subcategory_key, tags_list in category_value.items():
+                            # 初始化子分类列表
+                            if subcategory_key not in aggregated_tags[category_key]:
+                                aggregated_tags[category_key][subcategory_key] = []
+                            
+                            # 处理标签列表
+                            if isinstance(tags_list, list):
+                                for tag in tags_list:
+                                    if isinstance(tag, str) and tag.strip() and tag not in aggregated_tags[category_key][subcategory_key]:
+                                        aggregated_tags[category_key][subcategory_key].append(tag)
+                            elif isinstance(tags_list, str) and tags_list.strip():
+                                # 处理单个字符串的情况
+                                if tags_list not in aggregated_tags[category_key][subcategory_key]:
+                                    aggregated_tags[category_key][subcategory_key].append(tags_list)
+                    else:
+                        logger.debug(f"Category value is not a dict during aggregation: {category_key} = {category_value}")
+
+        # 构建最终的标签分析结果（使用聚合后的标签，而不是原始标签体系）
         tag_analysis = {
-            "crowd_scenario": tag_system.get("人群场景", {}),
-            "functional_value": tag_system.get("功能价值", {}),
-            "assurance_value": tag_system.get("保障价值", {}),
-            "experience_value": tag_system.get("体验价值", {}),
+            "crowd_scenario": aggregated_tags.get("人群场景", {}),
+            "functional_value": aggregated_tags.get("功能价值", {}),
+            "assurance_value": aggregated_tags.get("保障价值", {}),
+            "experience_value": aggregated_tags.get("体验价值", {}),
             "total_comments_analyzed": len(sample_comments),
             "total_tags_applied": total_tags_applied,
             "analysis_summary": f"基于 {len(sample_comments)} 条评论生成的标签体系，共应用 {total_tags_applied} 个标签",

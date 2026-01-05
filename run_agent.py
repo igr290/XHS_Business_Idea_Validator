@@ -143,9 +143,22 @@ async def validate_business_idea(
         # 显示数据抓取结果
         if "scrape_data" in step_results:
             sc_data = step_results["scrape_data"].get("data", {})
+            # Check the new data structure for posts_with_comments
+            metadata = sc_data.get("metadata", {})
+            total_posts = metadata.get("total_posts", 0)
+            posts_with_comments = metadata.get("posts_with_comments", 0)
+
+            # Fallback to old structure if new structure not available
+            if total_posts == 0:
+                total_posts = sc_data.get('total_notes', 0)
+
+            total_comments = metadata.get("total_comments", 0)
+            if total_comments == 0:
+                total_comments = sc_data.get('total_comments', 0)
+
             print(f"\n📊 数据抓取:")
-            print(f"   笔记数: {sc_data.get('total_notes', 0)}")
-            print(f"   评论数: {sc_data.get('total_comments', 0)}")
+            print(f"   笔记数: {total_posts}")
+            print(f"   评论数: {total_comments}")
 
         # 显示综合评分
         if "combined_analysis" in step_results:

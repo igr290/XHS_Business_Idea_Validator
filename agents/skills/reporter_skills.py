@@ -629,7 +629,7 @@ async def generate_html_report_skill(
 
                     for tag in tags[:10]:  # 限制显示前10个标签
                         # 获取标签统计
-                        tag_key = f"{category_name}-{subcategory}-{tag}"
+                        tag_key = f"{category_name}.{subcategory}.{tag}"
                         tag_count = tag_data.get("tag_statistics", {}).get(tag_key, 0)
 
                         # 判断标签情感（负面标签以"-"开头）
@@ -757,6 +757,7 @@ async def generate_html_report_skill(
         <div class="footer">
             <p>报告生成时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
             <p>由 Business Idea Validator Agent System 自动生成</p>
+            <p style="margin-top: 10px; font-size: 14px; color: #888; font-style: italic;">小提示: 相关资料请到 agent_context/checkpoints/{run_id}/ 目录下查看</p>
         </div>
     </div>
 </body>

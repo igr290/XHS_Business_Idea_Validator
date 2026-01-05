@@ -182,7 +182,7 @@ class BaseAgent(ABC):
         self,
         prompt: str,
         response_model: Optional[type] = None,
-        max_tokens: int = 2000,
+        max_tokens: int = 12000,
         temperature: float = 0.7
     ) -> Any:
         """

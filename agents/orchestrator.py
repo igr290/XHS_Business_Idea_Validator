@@ -13,7 +13,7 @@ from enum import Enum
 from agents.base_agent import BaseAgent, AgentStatus, TaskResult
 from agents.config import AgentConfig, ConfigManager, RetryConfig
 from agents.context_store import ContextStore
-from agents.subagents import KeywordAgent, ScraperAgent, AnalyzerAgent, ReporterAgent
+from agents.subagents import ScraperAgent, AnalyzerAgent, ReporterAgent
 from models.agent_models import (
     ExecutionPlan,
     ExecutionStep,
@@ -254,137 +254,64 @@ class OrchestratorAgent(BaseAgent):
         comments_per_note = kwargs.get("comments_per_note", 20)
         use_fast_mode = kwargs.get("use_user_input_as_keyword", False)
 
-        # 根据模式创建不同的执行计划
-        if use_fast_mode:
-            # 快速模式：跳过关键词生成，直接使用用户输入
-            logger.info(f"快速模式：直接使用用户输入作为搜索关键词 - '{business_idea}'")
-            steps = [
-                ExecutionStep(
-                    step_id="scrape_data",
-                    agent_name="scraper_agent",
-                    task="batch_scrape_with_comments",
-                    description="抓取小红书数据（带评论合并）",
-                    params={
-                        "pages_per_keyword": pages_per_keyword,
-                        "comments_per_note": comments_per_note,
-                        "max_notes": 50
-                    },
-                    depends_on=[],  # 无依赖，直接开始
-                    retry_on_failure=True,
-                    timeout=600
-                ),
-                ExecutionStep(
-                    step_id="analyze_posts_with_comments",
-                    agent_name="analyzer_agent",
-                    task="batch_analyze_with_comments",
-                    description="分析笔记和评论（统一分析）",
-                    params={},
-                    depends_on=["scrape_data"],
-                    retry_on_failure=True,
-                    timeout=900
-                ),
-                ExecutionStep(
-                    step_id="analyze_comments_with_tags",
-                    agent_name="analyzer_agent",
-                    task="analyze_comments_with_tags",
-                    description="评论标签体系分析（人群/功能/保障/体验价值）",
-                    params={},
-                    depends_on=["analyze_posts_with_comments"],
-                    retry_on_failure=False,  # 评论标签分析失败不重试（可选）
-                    timeout=600  # 10分钟
-                ),
-                ExecutionStep(
-                    step_id="combined_analysis",
-                    agent_name="analyzer_agent",
-                    task="combined_from_posts",
-                    description="生成综合分析",
-                    params={},
-                    depends_on=["analyze_posts_with_comments"],  # 只依赖帖子分析，标签分析是可选的
-                    retry_on_failure=True,
-                    timeout=180
-                ),
-                ExecutionStep(
-                    step_id="generate_report",
-                    agent_name="reporter_agent",
-                    task="generate_html",
-                    description="生成验证报告",
-                    params={"auto_save": True},
-                    depends_on=["combined_analysis"],
-                    retry_on_failure=False,
-                    timeout=60
-                )
-            ]
-        else:
-            # 正常模式：生成关键词
-            steps = [
-                ExecutionStep(
-                    step_id="generate_keywords",
-                    agent_name="keyword_agent",
-                    task="generate",
-                    description="生成搜索关键词",
-                    params={
-                        "count": keyword_count,
-                        "use_user_input_as_keyword": False
-                    },
-                    depends_on=[],
-                    retry_on_failure=True,
-                    timeout=60
-                ),
-                ExecutionStep(
-                    step_id="scrape_data",
-                    agent_name="scraper_agent",
-                    task="batch_scrape_with_comments",
-                    description="抓取小红书数据（带评论合并）",
-                    params={
-                        "pages_per_keyword": pages_per_keyword,
-                        "comments_per_note": comments_per_note,
-                        "max_notes": 50
-                    },
-                    depends_on=["generate_keywords"],
-                    retry_on_failure=True,
-                    timeout=600
-                ),
-                ExecutionStep(
-                    step_id="analyze_posts_with_comments",
-                    agent_name="analyzer_agent",
-                    task="batch_analyze_with_comments",
-                    description="分析笔记和评论（统一分析）",
-                    params={},
-                    depends_on=["scrape_data"],
-                    retry_on_failure=True,
-                    timeout=900
-                ),
-                ExecutionStep(
-                    step_id="analyze_comments_with_tags",
-                    agent_name="analyzer_agent",
-                    task="analyze_comments_with_tags",
-                    description="评论标签体系分析（人群/功能/保障/体验价值）",
-                    params={},
-                    depends_on=["analyze_posts_with_comments"],
-                    retry_on_failure=False,  # 评论标签分析失败不重试（可选）
-                    timeout=600  # 10分钟
-                ),
-                ExecutionStep(
-                    step_id="combined_analysis",
-                    agent_name="analyzer_agent",
-                    task="combined_from_posts",
-                    description="生成综合分析",
-                    params={},
-                    depends_on=["analyze_posts_with_comments"],  # 只依赖帖子分析，标签分析是可选的
-                    retry_on_failure=True,
-                    timeout=180
-                ),
-                ExecutionStep(
-                    step_id="generate_report",
-                    agent_name="reporter_agent",
-                    task="generate_html",
-                    description="生成验证报告",
-                    params={"auto_save": True},
-                    depends_on=["combined_analysis"],
-                    retry_on_failure=False,
-                    timeout=60
-                )
-            ]
+        # Always use the user input directly as the search keyword (remove keyword generation step)
+        logger.info(f"直接使用用户输入作为搜索关键词 - '{business_idea}'")
+        steps = [
+            ExecutionStep(
+                step_id="scrape_data",
+                agent_name="scraper_agent",
+                task="batch_scrape_with_comments",
+                description="抓取小红书数据（带评论合并）",
+                params={
+                    "pages_per_keyword": pages_per_keyword,
+                    "comments_per_note": comments_per_note,
+                    "max_notes": 50
+                },
+                depends_on=[],  # 无依赖，直接开始
+                retry_on_failure=True,
+                timeout=600
+            ),
+            ExecutionStep(
+                step_id="analyze_posts_with_comments",
+                agent_name="analyzer_agent",
+                task="batch_analyze_with_comments",
+                description="分析笔记和评论（统一分析）",
+                params={},
+                depends_on=["scrape_data"],
+                retry_on_failure=True,
+                timeout=900
+            ),
+            ExecutionStep(
+                step_id="analyze_comments_with_tags",
+                agent_name="analyzer_agent",
+                task="analyze_comments_with_tags",
+                description="评论标签体系分析（人群/功能/保障/体验价值）",
+                params={},
+                depends_on=["analyze_posts_with_comments"],
+                retry_on_failure=False,  # 评论标签分析失败不重试（可选）
+                timeout=600  # 10分钟
+            ),
+            ExecutionStep(
+                step_id="combined_analysis",
+                agent_name="analyzer_agent",
+                task="combined_from_posts",
+                description="生成综合分析",
+                params={},
+                depends_on=["analyze_posts_with_comments"],  # 只依赖帖子分析，标签分析是可选的
+                retry_on_failure=True,
+                timeout=180
+            ),
+            ExecutionStep(
+                step_id="generate_report",
+                agent_name="reporter_agent",
+                task="generate_html",
+                description="生成验证报告",
+                params={"auto_save": True},
+                depends_on=["combined_analysis"],
+                retry_on_failure=False,
+                timeout=60
+            )
+        ]
 
         return ExecutionPlan(
             business_idea=business_idea,
@@ -658,18 +585,20 @@ class OrchestratorAgent(BaseAgent):
         Returns:
             更新后的共享上下文
         """
-        if step_id == "generate_keywords":
-            keywords = step_result.get("data", {}).get("keywords", [])
-            shared_context["keywords"] = keywords
-            # DEBUG: Log what keywords were extracted
-            logger.debug(f"[ORCHESTRATOR] generate_keywords result data: {step_result.get('data', {})}")
-            logger.info(f"[ORCHESTRATOR] Keywords extracted to shared_context: {keywords}")
-
-        elif step_id == "scrape_data":
+        # Skip the generate_keywords step since we're using user input directly
+        # Initialize keywords from business idea if not already set
+        if step_id == "scrape_data":
             # 新格式：posts_with_comments 结构
             data = step_result.get("data", {})
             shared_context["posts_with_comments"] = data.get("posts_with_comments", [])
             metadata = data.get("metadata", {})
+
+            # If keywords haven't been set yet, use the business idea
+            if "keywords" not in shared_context and "business_idea" in shared_context:
+                business_idea = shared_context.get("business_idea", "")
+                if business_idea:
+                    shared_context["keywords"] = [business_idea]
+
             logger.info(
                 f"scrape_data completed: {metadata.get('total_posts', 0)} posts, "
                 f"{metadata.get('posts_with_comments', 0)} with comments"
@@ -707,11 +636,6 @@ class OrchestratorAgent(BaseAgent):
         """初始化并启动子 Agents"""
         if not self.subagents:
             self.subagents = {
-                "keyword_agent": KeywordAgent(
-                    self.config_manager,
-                    self.context_store,
-                    self.mcp_clients
-                ),
                 "scraper_agent": ScraperAgent(
                     self.config_manager,
                     self.context_store,

@@ -1,2 +1,0 @@
-2026-01-05 09:26:01,809 - asyncio - ERROR - Unclosed client session
-client_session: <aiohttp.client.ClientSession object at 0x000001961933E590>

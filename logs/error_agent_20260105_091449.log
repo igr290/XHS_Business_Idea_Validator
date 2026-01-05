@@ -1,4 +1,0 @@
-2026-01-05 09:16:07,588 - mcp.xhs_server - ERROR - [TikHub.XHS] Error: 400, message='Bad Request', url='https://api.tikhub.io/api/v1/xiaohongshu/web/get_note_comments?note_id=67cd81cc000000002a002ffb'
-2026-01-05 09:18:56,555 - agent.analyzer_agent - ERROR - [LLM] Error: type object 'dict' has no attribute 'model_json_schema'
-2026-01-05 09:18:56,555 - agent.analyzer_agent - ERROR - LLM call failed: type object 'dict' has no attribute 'model_json_schema'
-2026-01-05 09:18:56,556 - agents.skills.analyzer_skills - ERROR - Tag-based comment analysis failed: AttributeError: type object 'dict' has no attribute 'model_json_schema'

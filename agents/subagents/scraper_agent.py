@@ -340,16 +340,22 @@ class ScraperAgent(BaseAgent):
             批量抓取结果，包含 posts_with_comments
         """
         keywords = context.get("keywords", kwargs.get("keywords", []))
+        business_idea = context.get("business_idea", kwargs.get("business_idea", ""))
         pages_per_keyword = kwargs.get("pages_per_keyword", 2)
         comments_per_note = kwargs.get("comments_per_note", 20)
         max_notes = kwargs.get("max_notes", 20)
 
         # DEBUG: Log keywords received from context
         logger.debug(f"[SCRAPER_AGENT] Keywords from context: {keywords}")
-        logger.info(f"[SCRAPER_AGENT] About to scrape with {len(keywords)} keyword(s): {keywords}")
 
-        if not keywords:
-            raise ValueError("keywords is required")
+        # If no keywords are provided, use the business idea directly as the keyword
+        if not keywords and business_idea:
+            keywords = [business_idea]
+            logger.info(f"[SCRAPER_AGENT] Using business idea as keyword: {business_idea}")
+        elif not keywords:
+            raise ValueError("keywords or business_idea is required")
+
+        logger.info(f"[SCRAPER_AGENT] About to scrape with {len(keywords)} keyword(s): {keywords}")
 
         self.update_progress(
             "batch_scraping_with_comments",

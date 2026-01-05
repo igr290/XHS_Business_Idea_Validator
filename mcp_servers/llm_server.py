@@ -29,7 +29,7 @@ class LLMClient:
         base_url: str,
         model_name: str = "gpt-4o",
         temperature: float = 0.7,
-        max_tokens: int = 2000
+        max_tokens: int = 12000
     ):
         """
         初始化 LLM 客户端
@@ -208,7 +208,7 @@ Return only the JSON object, no additional text.
 
         text = await self.generate_text(schema_prompt, max_tokens=max_tokens)
 
-        logger.debug(f"LLM raw response (first 500 chars): {text[:500]}")
+        logger.debug(f"LLM raw response (first 7500 chars): {text[:7500]}")
 
         # 清理文本：去除 markdown 代码块标记
         text = text.strip()
@@ -306,7 +306,7 @@ class LLMMCPServer:
     async def generate_text(
         self,
         prompt: str,
-        max_tokens: int = 2000,
+        max_tokens: int = 12000,
         temperature: float = 0.7
     ) -> Dict[str, Any]:
         """
@@ -358,7 +358,7 @@ class LLMMCPServer:
         self,
         prompt: str,
         schema: Dict[str, Any],
-        max_tokens: int = 2000
+        max_tokens: int = 12000
     ) -> Dict[str, Any]:
         """
         生成结构化输出

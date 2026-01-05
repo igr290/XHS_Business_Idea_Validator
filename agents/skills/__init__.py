@@ -4,12 +4,6 @@ Skills 模块
 包含所有业务技能的实现
 """
 
-from .keyword_skills import (
-    generate_keywords_skill,
-    refine_keywords_skill,
-    validate_keywords_skill
-)
-
 from .scraper_skills import (
     search_posts_skill,
     get_comments_skill,
@@ -35,10 +29,6 @@ from .reporter_skills import (
 
 
 __all__ = [
-    # Keyword skills
-    "generate_keywords_skill",
-    "refine_keywords_skill",
-    "validate_keywords_skill",
     # Scraper skills
     "search_posts_skill",
     "get_comments_skill",

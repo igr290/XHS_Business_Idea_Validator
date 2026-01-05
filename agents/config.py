@@ -57,7 +57,7 @@ class LLMConfig:
     api_key: str = ""
     base_url: str = "https://api.openai.com/v1"
     temperature: float = 0.7
-    max_tokens: int = 2000
+    max_tokens: int = 12000
 
 
 @dataclass
@@ -183,6 +183,10 @@ class ConfigManager:
         if 'REDIS_URL' in os.environ:
             self._set_nested('storage.redis_url', os.environ['REDIS_URL'])
 
+        # Logging Level
+        if 'LOGGING_LEVEL' in os.environ:
+            self._set_nested('logging.level', os.environ['LOGGING_LEVEL'].upper())
+
     def _set_nested(self, key: str, value: Any):
         """设置嵌套配置值"""
         keys = key.split('.')
@@ -223,7 +227,7 @@ class ConfigManager:
                 'api_key': os.getenv('OPENAI_API_KEY', ''),
                 'base_url': os.getenv('OPENAI_BASE_URL', 'https://openai.api2d.net/v1'),
                 'temperature': 0.7,
-                'max_tokens': 2000
+                'max_tokens': 12000
             },
             'storage': {
                 'type': 'file',
@@ -321,7 +325,7 @@ class ConfigManager:
             api_key=self.get('llm.api_key', ''),
             base_url=self.get('llm.base_url', 'https://api.openai.com/v1'),
             temperature=self.get('llm.temperature', 0.7),
-            max_tokens=self.get('llm.max_tokens', 2000)
+            max_tokens=self.get('llm.max_tokens', 12000)
         )
 
     def get_storage_config(self) -> StorageConfig:
