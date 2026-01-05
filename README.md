@@ -1,8 +1,20 @@
-# Agent 系统 Phase 1-3 完成报告
+# XHS_Business_Idea_Validator 小红书解析市场机会智能体
 
 ## 📋 项目概述
 
-基于 `docs/AGENT_REDEVELOPMENT_PLAN.md`，已在 `agent_system/` 文件夹中完成了 **Phase 1-3 的完整实现**。
+小红书收集和分析数据来解析市场需求用户痛点及竞争格局 
+深度！ 评论分析！用户画像！找商机！
+都在说这些，但是感觉都没有人开源，那么我开源一个：
+
+为什么找市场机会小红书？
+商机在具体的问题里
+
+小红书这里汇聚着包罗万象的生活问题和经验分享，“遇事不决小红书”成为年轻人常用的决策路径，他们相信能在这里找到答案。
+
+对商家而言，要想深入了解今年的消费者在苦恼些什么、真正需要些什么，小红书是必经之路。
+
+消费者不是没有需求，而是需求太具体。
+
 
 ### 核心功能
 
@@ -10,9 +22,6 @@
 - 🤖 **AI 内容分析**: 使用 LLM 分析用户痛点和市场需求
 - 📄 **自动化报告生成**: 生成专业的市场验证报告
 
-### 系统变更
-
-在 v0.4.0 版本中，我们移除了关键词生成功能，系统现在直接使用用户输入的业务创意作为搜索关键词，简化了工作流程并提高了执行效率。
 
 ### 系统流程图
 
@@ -102,7 +111,7 @@
 
 ```bash
 # 安装依赖
-cd agent_system
+cd XHS_Business_Idea_Validator
 pip install -r requirements.txt
 
 # 配置 API 密钥 (编辑 agent_system/.env 文件)
@@ -115,40 +124,7 @@ python run_agent.py 在深圳卖陈皮
 
 👉 **详细使用指南**: [USER_GUIDE.md](USER_GUIDE.md)
 
----
-
-## ✅ 完成清单
-
-### Phase 1: 基础架构搭建 ✅
-
-| 任务 | 描述 | 状态 |
-|------|------|------|
-| 1.1 | 创建 Agent 框架目录结构 | ✅ 完成 |
-| 1.2 | 实现 MCP Servers | ✅ 完成 |
-| 1.3 | 创建 Base Agent 类 | ✅ 完成 |
-| 1.4 | 实现 Context Store | ✅ 完成 |
-| 1.5 | 配置管理重构 | ✅ 完成 |
-
-### Phase 2: Subagents 实现 ✅
-
-| 任务 | 描述 | 状态 |
-|------|------|------|
-| 2.1 | ScraperAgent | ✅ 完成 |
-| 2.2 | AnalyzerAgent | ✅ 完成 |
-| 2.3 | ReporterAgent | ✅ 完成 |
-| 2.4 | Skills 实现 | ✅ 完成 |
-
-### Phase 3: Orchestrator 实现 ✅
-
-| 任务 | 描述 | 状态 |
-|------|------|------|
-| 3.1 | 主编排 Agent | ✅ 完成 |
-| 3.2 | 任务分配逻辑 | ✅ 完成 |
-| 3.3 | 进度监控 | ✅ 完成 |
-| 3.4 | 错误处理 | ✅ 完成 |
-| 3.5 | 结果汇总 | ✅ 完成 |
-
----
+  
 
 ## 📁 目录结构
 
@@ -188,113 +164,3 @@ agent_system/
     ├── test_integration.py          # 集成测试 ✅
     └── test_e2e.py                  # 端到端测试 ✅
 ```
-
----
-
-## 🧪 测试结果
-
-### 端到端测试 (2026-01-02)
-
-```
-================================================================================
-📊 测试汇总
-================================================================================
-   测试项目: 业务创意验证 (在深圳卖陈皮)
-   执行时间: 300 秒 (5 分钟)
-
-   ✅ scrape_data: 288.88s (60 条笔记, 230 条评论)
-   ✅ analyze_posts: 5.51s
-   ✅ analyze_comments: 0.00s
-   ✅ combined_analysis: 4.58s
-   ✅ generate_report: 0.00s
-
-   搜索关键词: ['在深圳卖陈皮'] (使用用户输入)
-   综合评分: 65/100
-   HTML 报告: ✅ 已生成 (3745 字符)
-
-🎉 所有测试通过!
-```
-
----
-
-## 🚀 使用方式
-
-### 方式一：命令行脚本 (推荐)
-
-```bash
-# 使用启动脚本
-python run_agent.py 在深圳卖陈皮
-
-# 或交互式输入
-python run_agent.py
-```
-
-### 方式二：Python API
-
-```python
-from agents.orchestrator import OrchestratorAgent
-from agents.config import ConfigManager
-from agents.context_store import ContextStore
-
-# 创建编排器
-config = ConfigManager()
-context_store = ContextStore()
-orchestrator = OrchestratorAgent(config, context_store, mcp_clients)
-
-# 执行验证
-result = await orchestrator.execute(
-    task="validate_business_idea",
-    business_idea="你的业务创意"
-)
-```
-
-详细说明请查看 [USER_GUIDE.md](USER_GUIDE.md)
-
----
-
-## 📊 最新测试结果
-
-### 完整流程测试
-
-| 步骤 | 状态 | 耗时 | 结果 |
-|------|------|------|------|
-| 数据抓取 | ✅ | 288.88s | 60笔记/230评论 |
-| 笔记分析 | ✅ | 5.51s | 1/60相关 |
-| 评论分析 | ✅ | 0.00s | 已处理 |
-| 综合分析 | ✅ | 4.58s | 评分65/100 |
-| 报告生成 | ✅ | 0.00s | HTML已生成 |
-
----
-
-## 🔗 相关文档
-
-| 文档 | 说明 |
-|------|------|
-| [USER_GUIDE.md](USER_GUIDE.md) | **用户使用指南** ← 详细使用说明 |
-| `docs/AGENT_REDEVELOPMENT_PLAN.md` | 开发计划 |
-| `docs/TECHNICAL_SPECIFICATION.md` | 技术规格 |
-| `docs/XHS_MCP_SERVER_IMPLEMENTATION.md` | XHS 实现细节 |
-
----
-
-## 📅 版本信息
-
-| 项目 | 内容 |
-|------|------|
-| 版本 | **v0.4.0** |
-| 完成日期 | 2026-01-05 |
-| 状态 | Phase 1-3 全部完成，关键词生成功能已移除 |
-| 测试状态 | ✅ 端到端测试通过 |
-
----
-
-## 🎉 系统已可用！
-
-Agent 系统已完成 Phase 1-3 的开发，可以正常使用。
-
-**快速开始:**
-```bash
-python run_agent.py 你的业务创意
-```
-
-*本文档由 Claude Code 自动生成*
