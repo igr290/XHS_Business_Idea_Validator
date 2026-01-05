@@ -1,0 +1,17 @@
+2026-01-05 09:26:26,502 - root - INFO - ============================================================
+2026-01-05 09:26:26,503 - root - INFO - Logging initialized. Level: INFO
+2026-01-05 09:26:26,503 - root - INFO - Log file: D:\agent_system\logs\agent_20260105_092626.log
+2026-01-05 09:26:26,504 - root - INFO - ============================================================
+2026-01-05 09:26:26,504 - mcp.xhs_server - INFO - XHS MCP Server initialized
+2026-01-05 09:26:26,505 - mcp.xhs_server - INFO - XHS MCP Server started
+2026-01-05 09:26:26,505 - mcp.llm_server - INFO - LLM MCP Server initialized
+2026-01-05 09:26:26,506 - mcp.llm_server - INFO - LLM Client initialized: model=gpt-4o
+2026-01-05 09:26:27,394 - mcp.llm_server - INFO - LLM Client started
+2026-01-05 09:26:27,395 - mcp.llm_server - INFO - LLM MCP Server started
+2026-01-05 09:26:27,395 - mcp.storage_server - INFO - Storage MCP Server initialized: dir=agent_context
+2026-01-05 09:26:27,396 - mcp.storage_server - INFO - Storage MCP Server started
+2026-01-05 09:26:27,396 - agents.context_store - INFO - ContextStore initialized with TTL=<mcp_servers.storage_server.StorageMCPServer object at 0x000002994A6B36D0>s
+2026-01-05 09:26:27,397 - agents.context_store - INFO - Registered agent: orchestrator (orchestrator)
+2026-01-05 09:26:27,397 - agent.orchestrator - INFO - Agent initialized: orchestrator (type=orchestrator)
+2026-01-05 09:26:27,464 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002994966A090>

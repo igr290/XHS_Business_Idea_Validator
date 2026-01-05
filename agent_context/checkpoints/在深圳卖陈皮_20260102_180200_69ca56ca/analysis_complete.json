@@ -1,0 +1,20 @@
+{
+  "posts_analyses": {
+    "success": true,
+    "total_posts": 20,
+    "analyses": [],
+    "relevant_posts": [],
+    "summary": {
+      "total_posts": 20,
+      "analyzed_count": 0,
+      "relevant_count": 0,
+      "relevance_rate": 0,
+      "sentiment_distribution": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      },
+      "avg_engagement_score": 0
+    }
+  }
+}

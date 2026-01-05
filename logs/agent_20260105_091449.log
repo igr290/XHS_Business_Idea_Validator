@@ -1,0 +1,392 @@
+2026-01-05 09:14:49,501 - root - INFO - ============================================================
+2026-01-05 09:14:49,502 - root - INFO - Logging initialized. Level: INFO
+2026-01-05 09:14:49,502 - root - INFO - Log file: D:\agent_system\logs\agent_20260105_091449.log
+2026-01-05 09:14:49,502 - root - INFO - ============================================================
+2026-01-05 09:14:49,503 - agents.context_store - INFO - ContextStore initialized with TTL=3600s
+2026-01-05 09:14:49,504 - mcp.xhs_server - INFO - XHS MCP Server initialized
+2026-01-05 09:14:49,504 - mcp.xhs_server - INFO - XHS MCP Server started
+2026-01-05 09:14:49,504 - mcp.llm_server - INFO - LLM MCP Server initialized
+2026-01-05 09:14:49,505 - mcp.llm_server - INFO - LLM Client initialized: model=gpt-4o
+2026-01-05 09:14:51,263 - mcp.llm_server - INFO - LLM Client started
+2026-01-05 09:14:51,263 - mcp.llm_server - INFO - LLM MCP Server started
+2026-01-05 09:14:51,263 - mcp.storage_server - INFO - Storage MCP Server initialized: dir=agent_context/checkpoints
+2026-01-05 09:14:51,263 - mcp.storage_server - INFO - Storage MCP Server started
+2026-01-05 09:14:51,263 - agents.context_store - INFO - Registered agent: orchestrator (orchestrator)
+2026-01-05 09:14:51,263 - agent.orchestrator - INFO - Agent initialized: orchestrator (type=orchestrator)
+2026-01-05 09:14:51,263 - agent.orchestrator - INFO - Agent started: orchestrator
+2026-01-05 09:14:51,263 - agents.context_store - INFO - Registered agent: keyword_agent (keyword)
+2026-01-05 09:14:51,263 - agent.keyword_agent - INFO - Agent initialized: keyword_agent (type=keyword)
+2026-01-05 09:14:51,263 - agents.context_store - INFO - Registered agent: scraper_agent (scraper)
+2026-01-05 09:14:51,263 - agent.scraper_agent - INFO - Agent initialized: scraper_agent (type=scraper)
+2026-01-05 09:14:51,263 - agents.context_store - INFO - Registered agent: analyzer_agent (analyzer)
+2026-01-05 09:14:51,263 - agent.analyzer_agent - INFO - Agent initialized: analyzer_agent (type=analyzer)
+2026-01-05 09:14:51,263 - agents.context_store - INFO - Registered agent: reporter_agent (reporter)
+2026-01-05 09:14:51,277 - agent.reporter_agent - INFO - Agent initialized: reporter_agent (type=reporter)
+2026-01-05 09:14:51,277 - agent.keyword_agent - INFO - Agent started: keyword_agent
+2026-01-05 09:14:51,278 - agent.orchestrator - INFO - Subagent keyword_agent started
+2026-01-05 09:14:51,278 - agent.scraper_agent - INFO - Agent started: scraper_agent
+2026-01-05 09:14:51,278 - agent.orchestrator - INFO - Subagent scraper_agent started
+2026-01-05 09:14:51,278 - agent.analyzer_agent - INFO - Agent started: analyzer_agent
+2026-01-05 09:14:51,279 - agent.orchestrator - INFO - Subagent analyzer_agent started
+2026-01-05 09:14:51,279 - agent.reporter_agent - INFO - Agent started: reporter_agent
+2026-01-05 09:14:51,279 - agent.orchestrator - INFO - Subagent reporter_agent started
+2026-01-05 09:14:51,280 - agent.orchestrator - INFO - Orchestrator started
+2026-01-05 09:14:51,281 - agents.context_store - INFO - Created run context: 在珠海卖陈皮_20260105_091451_78935583
+2026-01-05 09:14:51,281 - agent.orchestrator - INFO - Starting validation for: 在珠海卖陈皮 (run_id: 在珠海卖陈皮_20260105_091451_78935583)
+2026-01-05 09:14:51,282 - agent.orchestrator - INFO - 快速模式：直接使用用户输入作为搜索关键词 - '在珠海卖陈皮'
+2026-01-05 09:14:51,282 - agent.orchestrator - INFO - [快速模式] 直接使用用户输入作为搜索关键词: 在珠海卖陈皮
+2026-01-05 09:14:51,284 - agent.scraper - INFO - [SCRAPER_AGENT] About to scrape with 1 keyword(s): ['在珠海卖陈皮']
+2026-01-05 09:14:51,285 - agents.skills.scraper_skills - INFO - Batch scraping with comments for 1 keywords
+2026-01-05 09:14:51,285 - agents.skills.scraper_skills - INFO - Batch scraping for 1 keywords
+2026-01-05 09:14:51,286 - agents.skills.scraper_skills - INFO - Searching posts for keyword: 在珠海卖陈皮, pages: 2
+2026-01-05 09:14:51,286 - agent.scraper_agent - INFO - [MCP.XHS] Request: search_notes
+2026-01-05 09:14:51,286 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:14:55,224 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:14:56,235 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:01,508 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:01,509 - mcp.xhs_server - INFO - Search complete: 37 notes in 10.22s
+2026-01-05 09:15:01,510 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-05 09:15:01,510 - agents.skills.scraper_skills - INFO - Found 37 notes for '在珠海卖陈皮'
+2026-01-05 09:15:01,511 - agents.skills.scraper_skills - INFO - Found 20 notes for '在珠海卖陈皮'
+2026-01-05 09:15:01,511 - agents.skills.scraper_skills - INFO - Batch getting comments for 20 notes
+2026-01-05 09:15:01,511 - agent.scraper_agent - INFO - [MCP.XHS] Request: batch_get_comments
+2026-01-05 09:15:01,513 - mcp.xhs_server - INFO - Batch getting comments for 20 notes (with 2.0s delay)
+2026-01-05 09:15:01,513 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:03,291 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:03,292 - mcp.xhs_server - INFO - Got 0 comments in 1.78s
+2026-01-05 09:15:03,292 - mcp.xhs_server - INFO - Got 0 comments for note 64100b6a00000000270109fc (1/20)
+2026-01-05 09:15:05,304 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:09,867 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:09,868 - mcp.xhs_server - INFO - Got 0 comments in 4.56s
+2026-01-05 09:15:09,868 - mcp.xhs_server - INFO - Got 0 comments for note 65d069640000000007024fe8 (2/20)
+2026-01-05 09:15:11,882 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:23,299 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:23,300 - mcp.xhs_server - INFO - Got 0 comments in 11.42s
+2026-01-05 09:15:23,300 - mcp.xhs_server - INFO - Got 0 comments for note 683d9ee8000000002202a61d (3/20)
+2026-01-05 09:15:25,302 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:26,933 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:26,934 - mcp.xhs_server - INFO - Got 2 comments in 1.63s
+2026-01-05 09:15:26,934 - mcp.xhs_server - INFO - Got 2 comments for note 68712050000000001002553f (4/20)
+2026-01-05 09:15:28,938 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:33,630 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:33,631 - mcp.xhs_server - INFO - Got 1 comments in 4.69s
+2026-01-05 09:15:33,631 - mcp.xhs_server - INFO - Got 1 comments for note 5ed7a4da0000000001006c1c (5/20)
+2026-01-05 09:15:35,638 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:15:46,517 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:15:46,518 - mcp.xhs_server - INFO - Got 0 comments in 10.88s
+2026-01-05 09:15:46,519 - mcp.xhs_server - INFO - Got 0 comments for note 68c6af0c000000001d017f03 (6/20)
+2026-01-05 09:15:48,525 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:07,588 - mcp.xhs_server - ERROR - [TikHub.XHS] Error: 400, message='Bad Request', url='https://api.tikhub.io/api/v1/xiaohongshu/web/get_note_comments?note_id=67cd81cc000000002a002ffb'
+2026-01-05 09:16:07,590 - mcp.xhs_server - WARNING - Request failed for note 67cd81cc000000002a002ffb: 400, message='Bad Request', url='https://api.tikhub.io/api/v1/xiaohongshu/web/get_note_comments?note_id=67cd81cc000000002a002ffb', retrying...
+2026-01-05 09:16:08,592 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:10,018 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:10,019 - mcp.xhs_server - INFO - Got 15 comments in 21.49s
+2026-01-05 09:16:10,020 - mcp.xhs_server - INFO - Got 15 comments for note 67cd81cc000000002a002ffb (7/20)
+2026-01-05 09:16:12,033 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:18,556 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:18,557 - mcp.xhs_server - INFO - Got 15 comments in 6.52s
+2026-01-05 09:16:18,557 - mcp.xhs_server - INFO - Got 15 comments for note 69213bc8000000001e0135eb (8/20)
+2026-01-05 09:16:20,569 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:22,246 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:22,246 - mcp.xhs_server - INFO - Got 0 comments in 1.68s
+2026-01-05 09:16:22,247 - mcp.xhs_server - INFO - Got 0 comments for note 692120a9000000001e0314ad (9/20)
+2026-01-05 09:16:24,250 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:25,494 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:25,496 - mcp.xhs_server - INFO - Got 3 comments in 1.25s
+2026-01-05 09:16:25,496 - mcp.xhs_server - INFO - Got 3 comments for note 6954f497000000001d03ccd1 (10/20)
+2026-01-05 09:16:27,507 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:28,809 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:28,809 - mcp.xhs_server - INFO - Got 0 comments in 1.30s
+2026-01-05 09:16:28,810 - mcp.xhs_server - INFO - Got 0 comments for note 69492c94000000000d00cd2b (11/20)
+2026-01-05 09:16:30,819 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:41,267 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:41,268 - mcp.xhs_server - INFO - Got 8 comments in 10.45s
+2026-01-05 09:16:41,268 - mcp.xhs_server - INFO - Got 8 comments for note 694d595b000000001f00e2f6 (12/20)
+2026-01-05 09:16:43,276 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:51,125 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:51,125 - mcp.xhs_server - INFO - Got 15 comments in 7.85s
+2026-01-05 09:16:51,126 - mcp.xhs_server - INFO - Got 15 comments for note 6947e1a7000000000d03cc1b (13/20)
+2026-01-05 09:16:53,138 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:16:54,504 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:16:54,505 - mcp.xhs_server - INFO - Got 1 comments in 1.37s
+2026-01-05 09:16:54,505 - mcp.xhs_server - INFO - Got 1 comments for note 693b7a4b000000001e010d38 (14/20)
+2026-01-05 09:16:56,519 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:17:01,849 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:17:01,850 - mcp.xhs_server - INFO - Got 1 comments in 5.33s
+2026-01-05 09:17:01,850 - mcp.xhs_server - INFO - Got 1 comments for note 695a936d000000001d03c7bc (15/20)
+2026-01-05 09:17:03,850 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:17:14,605 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:17:14,605 - mcp.xhs_server - INFO - Got 0 comments in 10.76s
+2026-01-05 09:17:14,605 - mcp.xhs_server - INFO - Got 0 comments for note 69417a70000000001e005377 (16/20)
+2026-01-05 09:17:16,618 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:17:23,856 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:17:23,858 - mcp.xhs_server - INFO - Got 15 comments in 7.24s
+2026-01-05 09:17:23,858 - mcp.xhs_server - INFO - Got 15 comments for note 694b97a9000000001b0214a4 (17/20)
+2026-01-05 09:17:25,867 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:17:34,030 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:17:34,031 - mcp.xhs_server - INFO - Got 15 comments in 8.16s
+2026-01-05 09:17:34,032 - mcp.xhs_server - INFO - Got 15 comments for note 6951ef40000000001e021ec8 (18/20)
+2026-01-05 09:17:36,045 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:17:51,277 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:17:51,278 - mcp.xhs_server - INFO - Got 0 comments in 15.23s
+2026-01-05 09:17:51,278 - mcp.xhs_server - INFO - Got 0 comments for note 68fb4a320000000007023f6b (19/20)
+2026-01-05 09:17:53,292 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-05 09:17:57,876 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-05 09:17:57,877 - mcp.xhs_server - INFO - Got 1 comments in 4.59s
+2026-01-05 09:17:57,878 - mcp.xhs_server - INFO - Got 1 comments for note 6958d1a6000000001e039524 (20/20)
+2026-01-05 09:17:57,878 - mcp.xhs_server - INFO - Batch complete: 92 comments in 176.37s
+2026-01-05 09:17:57,879 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-05 09:17:57,879 - agents.skills.scraper_skills - INFO - Batch complete: 92 comments total
+2026-01-05 09:17:57,879 - agents.skills.scraper_skills - INFO - Got 92 comments for '在珠海卖陈皮'
+2026-01-05 09:17:57,880 - agents.skills.scraper_skills - INFO - Batch scrape complete: 20 notes, 20 comment batches in 186.59s
+2026-01-05 09:17:57,880 - agents.skills.scraper_skills - INFO - Batch scrape with comments complete: 20 posts, 12 with comments, 92 total comments
+2026-01-05 09:17:57,881 - agent.scraper_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-05 09:17:57,893 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\在珠海卖陈皮_20260105_091451_78935583\scraping_complete.json
+2026-01-05 09:17:57,893 - agent.scraper_agent - INFO - [MCP.STORAGE] Response received
+2026-01-05 09:17:57,893 - agent.scraper_agent - INFO - Checkpoint saved: 在珠海卖陈皮_20260105_091451_78935583/scraping_complete
+2026-01-05 09:17:57,894 - agent.orchestrator - INFO - scrape_data completed: 20 posts, 12 with comments
+2026-01-05 09:17:57,895 - agents.skills.analyzer_skills - INFO - Batch analyzing 20 posts with comments
+2026-01-05 09:17:57,896 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 珠海客人回购3斤，有一罐一斤或半斤装选 (id=64100b6a00000000270109fc)
+2026-01-05 09:17:57,896 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:17:57,902 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:17:57,902 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:01,281 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:01,302 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:01,303 - mcp.llm_server - INFO - Generated structured output in 3.40s
+2026-01-05 09:18:01,304 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:01,305 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:01,305 - agents.skills.analyzer_skills - INFO - Analysis complete for 64100b6a00000000270109fc: relevant=True, sentiment=neutral
+2026-01-05 09:18:01,306 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 珠海0217 (id=65d069640000000007024fe8)
+2026-01-05 09:18:01,306 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:01,308 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:01,308 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:03,105 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:03,108 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:03,108 - mcp.llm_server - INFO - Generated structured output in 1.80s
+2026-01-05 09:18:03,109 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:03,109 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:03,110 - agents.skills.analyzer_skills - INFO - Analysis complete for 65d069640000000007024fe8: relevant=True, sentiment=positive
+2026-01-05 09:18:03,110 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 珠海印象：斗门老街的神奇陈皮 (id=683d9ee8000000002202a61d)
+2026-01-05 09:18:03,111 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:03,113 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:03,114 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:05,518 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:05,521 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:05,521 - mcp.llm_server - INFO - Generated structured output in 2.41s
+2026-01-05 09:18:05,521 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:05,521 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:05,522 - agents.skills.analyzer_skills - INFO - Analysis complete for 683d9ee8000000002202a61d: relevant=True, sentiment=neutral
+2026-01-05 09:18:05,522 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: #人生风景在路上 #陈皮 #中秋茶礼 #客户送礼 #选好料做好茶 #爱如陈皮愈久 (id=68712050000000001002553f)
+2026-01-05 09:18:05,522 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:05,524 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:05,524 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:08,071 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:08,073 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:08,074 - mcp.llm_server - INFO - Generated structured output in 2.55s
+2026-01-05 09:18:08,075 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:08,075 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:08,075 - agents.skills.analyzer_skills - INFO - Analysis complete for 68712050000000001002553f: relevant=True, sentiment=neutral
+2026-01-05 09:18:08,076 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=5ed7a4da0000000001006c1c)
+2026-01-05 09:18:08,076 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:08,079 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:08,080 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:10,860 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:10,862 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:10,863 - mcp.llm_server - INFO - Generated structured output in 2.78s
+2026-01-05 09:18:10,863 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:10,864 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:10,864 - agents.skills.analyzer_skills - INFO - Analysis complete for 5ed7a4da0000000001006c1c: relevant=True, sentiment=neutral
+2026-01-05 09:18:10,865 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=68c6af0c000000001d017f03)
+2026-01-05 09:18:10,865 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:10,867 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:10,868 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:13,065 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:13,067 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:13,068 - mcp.llm_server - INFO - Generated structured output in 2.20s
+2026-01-05 09:18:13,068 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:13,068 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:13,069 - agents.skills.analyzer_skills - INFO - Analysis complete for 68c6af0c000000001d017f03: relevant=True, sentiment=neutral
+2026-01-05 09:18:13,069 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 这种陈皮能买吗 (id=67cd81cc000000002a002ffb)
+2026-01-05 09:18:13,069 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:13,071 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:13,072 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:18,467 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:18,470 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:18,470 - mcp.llm_server - INFO - Generated structured output in 5.40s
+2026-01-05 09:18:18,471 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:18,471 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:18,472 - agents.skills.analyzer_skills - INFO - Analysis complete for 67cd81cc000000002a002ffb: relevant=True, sentiment=negative
+2026-01-05 09:18:18,472 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 求靠谱买陈皮的店 #陈皮 #推荐 #拜托各位了 #爱如陈皮愈久愈珍 #新会陈皮 (id=69213bc8000000001e0135eb)
+2026-01-05 09:18:18,472 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:18,475 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:18,476 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:22,104 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:22,106 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:22,106 - mcp.llm_server - INFO - Generated structured output in 3.63s
+2026-01-05 09:18:22,107 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:22,107 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:22,107 - agents.skills.analyzer_skills - INFO - Analysis complete for 69213bc8000000001e0135eb: relevant=True, sentiment=neutral
+2026-01-05 09:18:22,108 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 2025东甲新陈皮！给钱就卖！！！ (id=692120a9000000001e0314ad)
+2026-01-05 09:18:22,108 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:22,110 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:22,111 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:23,921 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:23,923 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:23,924 - mcp.llm_server - INFO - Generated structured output in 1.81s
+2026-01-05 09:18:23,924 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:23,924 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:23,925 - agents.skills.analyzer_skills - INFO - Analysis complete for 692120a9000000001e0314ad: relevant=True, sentiment=neutral
+2026-01-05 09:18:23,925 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 新会陈皮的产区 (id=6954f497000000001d03ccd1)
+2026-01-05 09:18:23,925 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:23,927 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:23,928 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:26,208 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:26,210 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:26,210 - mcp.llm_server - INFO - Generated structured output in 2.28s
+2026-01-05 09:18:26,210 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:26,211 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:26,211 - agents.skills.analyzer_skills - INFO - Analysis complete for 6954f497000000001d03ccd1: relevant=True, sentiment=positive
+2026-01-05 09:18:26,212 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 怎么能买到不工艺的陈皮？或者怎样买到做陈皮的柑橘？ (id=69492c94000000000d00cd2b)
+2026-01-05 09:18:26,212 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:26,216 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:26,216 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:28,950 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:28,952 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:28,953 - mcp.llm_server - INFO - Generated structured output in 2.74s
+2026-01-05 09:18:28,953 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:28,954 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:28,954 - agents.skills.analyzer_skills - INFO - Analysis complete for 69492c94000000000d00cd2b: relevant=True, sentiment=neutral
+2026-01-05 09:18:28,955 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=694d595b000000001f00e2f6)
+2026-01-05 09:18:28,955 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:28,956 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:28,957 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:31,773 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:31,775 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:31,776 - mcp.llm_server - INFO - Generated structured output in 2.82s
+2026-01-05 09:18:31,776 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:31,776 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:31,777 - agents.skills.analyzer_skills - INFO - Analysis complete for 694d595b000000001f00e2f6: relevant=True, sentiment=neutral
+2026-01-05 09:18:31,777 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 家里农产品卖不出去有没有能支个方法的 (id=6947e1a7000000000d03cc1b)
+2026-01-05 09:18:31,778 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:31,780 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:31,781 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:34,909 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:34,911 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:34,912 - mcp.llm_server - INFO - Generated structured output in 3.13s
+2026-01-05 09:18:34,913 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:34,913 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:34,913 - agents.skills.analyzer_skills - INFO - Analysis complete for 6947e1a7000000000d03cc1b: relevant=True, sentiment=neutral
+2026-01-05 09:18:34,914 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 感觉全世界都在晒陈皮 (id=693b7a4b000000001e010d38)
+2026-01-05 09:18:34,914 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:34,915 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:34,916 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:37,457 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:37,458 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:37,459 - mcp.llm_server - INFO - Generated structured output in 2.54s
+2026-01-05 09:18:37,459 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:37,459 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:37,459 - agents.skills.analyzer_skills - INFO - Analysis complete for 693b7a4b000000001e010d38: relevant=True, sentiment=neutral
+2026-01-05 09:18:37,460 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 珠海能买到这个陈皮饼吗 (id=695a936d000000001d03c7bc)
+2026-01-05 09:18:37,460 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:37,462 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:37,462 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:40,734 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:40,734 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:40,734 - mcp.llm_server - INFO - Generated structured output in 3.27s
+2026-01-05 09:18:40,734 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:40,734 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:40,734 - agents.skills.analyzer_skills - INFO - Analysis complete for 695a936d000000001d03c7bc: relevant=True, sentiment=neutral
+2026-01-05 09:18:40,737 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=69417a70000000001e005377)
+2026-01-05 09:18:40,737 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:40,737 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:40,737 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:43,108 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:43,110 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:43,110 - mcp.llm_server - INFO - Generated structured output in 2.37s
+2026-01-05 09:18:43,110 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:43,112 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:43,112 - agents.skills.analyzer_skills - INFO - Analysis complete for 69417a70000000001e005377: relevant=True, sentiment=positive
+2026-01-05 09:18:43,113 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 陈皮“精致化”，失了烟火气 (id=694b97a9000000001b0214a4)
+2026-01-05 09:18:43,113 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:43,116 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:43,117 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:46,224 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:46,227 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:46,227 - mcp.llm_server - INFO - Generated structured output in 3.11s
+2026-01-05 09:18:46,228 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:46,228 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:46,228 - agents.skills.analyzer_skills - INFO - Analysis complete for 694b97a9000000001b0214a4: relevant=True, sentiment=negative
+2026-01-05 09:18:46,228 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 送礼陈皮 (id=6951ef40000000001e021ec8)
+2026-01-05 09:18:46,229 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:46,231 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:46,232 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:51,260 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:51,261 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:51,262 - mcp.llm_server - INFO - Generated structured output in 5.03s
+2026-01-05 09:18:51,262 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:51,263 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:51,264 - agents.skills.analyzer_skills - INFO - Analysis complete for 6951ef40000000001e021ec8: relevant=True, sentiment=neutral
+2026-01-05 09:18:51,264 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 珠海横琴陈皮店柜子定制 (id=68fb4a320000000007023f6b)
+2026-01-05 09:18:51,265 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:51,267 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:51,268 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:53,563 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:53,563 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:53,563 - mcp.llm_server - INFO - Generated structured output in 2.30s
+2026-01-05 09:18:53,563 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:53,563 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:53,563 - agents.skills.analyzer_skills - INFO - Analysis complete for 68fb4a320000000007023f6b: relevant=False, sentiment=neutral
+2026-01-05 09:18:53,563 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=6958d1a6000000001e039524)
+2026-01-05 09:18:53,563 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:53,567 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:53,567 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:18:56,528 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:18:56,530 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:18:56,531 - mcp.llm_server - INFO - Generated structured output in 2.96s
+2026-01-05 09:18:56,532 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:18:56,532 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:18:56,533 - agents.skills.analyzer_skills - INFO - Analysis complete for 6958d1a6000000001e039524: relevant=True, sentiment=neutral
+2026-01-05 09:18:56,533 - agents.skills.analyzer_skills - INFO - Batch analysis complete: 20/20 successful, 19 relevant, 0 skipped
+2026-01-05 09:18:56,533 - agent.analyzer_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-05 09:18:56,550 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\在珠海卖陈皮_20260105_091451_78935583\analysis_complete.json
+2026-01-05 09:18:56,550 - agent.analyzer_agent - INFO - [MCP.STORAGE] Response received
+2026-01-05 09:18:56,550 - agent.analyzer_agent - INFO - Checkpoint saved: 在珠海卖陈皮_20260105_091451_78935583/analysis_complete
+2026-01-05 09:18:56,552 - agent.orchestrator - INFO - analyze_posts_with_comments completed: 19 relevant posts from 20 total
+2026-01-05 09:18:56,554 - agents.skills.analyzer_skills - INFO - Starting tag-based comments analysis for 20 posts
+2026-01-05 09:18:56,554 - agents.skills.analyzer_skills - INFO - Collected 92 comments for tag analysis
+2026-01-05 09:18:56,554 - agents.skills.analyzer_skills - INFO - Using 50 comments for analysis (sampled from 92 total)
+2026-01-05 09:18:56,554 - agents.skills.analyzer_skills - INFO - Step 1: Generating tag system from comments...
+2026-01-05 09:18:56,555 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:56,555 - agent.analyzer_agent - ERROR - [LLM] Error: type object 'dict' has no attribute 'model_json_schema'
+2026-01-05 09:18:56,555 - agent.analyzer_agent - ERROR - LLM call failed: type object 'dict' has no attribute 'model_json_schema'
+2026-01-05 09:18:56,556 - agents.skills.analyzer_skills - ERROR - Tag-based comment analysis failed: AttributeError: type object 'dict' has no attribute 'model_json_schema'
+2026-01-05 09:18:56,559 - agent.orchestrator - INFO - analyze_comments_with_tags completed: 0 comments analyzed, 0 tags applied
+2026-01-05 09:18:56,560 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-05 09:18:56,562 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-05 09:18:56,563 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-05 09:19:00,014 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-05 09:19:00,016 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-05 09:19:00,016 - mcp.llm_server - INFO - Generated structured output in 3.45s
+2026-01-05 09:19:00,017 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-05 09:19:00,017 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-05 09:19:00,018 - agent.analyzer - INFO - Starting word frequency analysis for combined insights
+2026-01-05 09:19:00,018 - agent.analyzer - INFO - Combined analysis complete: score=75/100
+2026-01-05 09:19:00,018 - agent.analyzer_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-05 09:19:00,020 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\在珠海卖陈皮_20260105_091451_78935583\combined_analysis_complete.json
+2026-01-05 09:19:00,020 - agent.analyzer_agent - INFO - [MCP.STORAGE] Response received
+2026-01-05 09:19:00,020 - agent.analyzer_agent - INFO - Checkpoint saved: 在珠海卖陈皮_20260105_091451_78935583/combined_analysis_complete
+2026-01-05 09:19:00,021 - agents.skills.reporter_skills - INFO - Generating HTML report with enhanced data
+2026-01-05 09:19:00,021 - agents.skills.reporter_skills - INFO - HTML report generated: 11263 characters
+2026-01-05 09:19:00,021 - agents.skills.reporter_skills - INFO - Saving report to: reports/在珠海卖陈皮_20260105_091900.html
+2026-01-05 09:19:00,024 - agents.skills.reporter_skills - INFO - Report saved: reports/在珠海卖陈皮_20260105_091900.html (12491 bytes)
+2026-01-05 09:19:00,024 - agent.reporter_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-05 09:19:00,026 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\在珠海卖陈皮_20260105_091451_78935583\report_saved.json
+2026-01-05 09:19:00,026 - agent.reporter_agent - INFO - [MCP.STORAGE] Response received
+2026-01-05 09:19:00,027 - agent.reporter_agent - INFO - Checkpoint saved: 在珠海卖陈皮_20260105_091451_78935583/report_saved
+2026-01-05 09:19:00,028 - agent.orchestrator - INFO - Validation completed successfully in 248.75s
+2026-01-05 09:19:00,029 - agent.orchestrator - INFO - Agent stopped: orchestrator
+2026-01-05 09:19:00,029 - agent.orchestrator - INFO - Orchestrator stopped
+2026-01-05 09:19:00,030 - mcp.xhs_server - INFO - XHS MCP Server stopped
+2026-01-05 09:19:00,031 - mcp.llm_server - INFO - LLM Client closed
+2026-01-05 09:19:00,031 - mcp.llm_server - INFO - LLM MCP Server stopped
+2026-01-05 09:19:00,032 - mcp.storage_server - INFO - Storage MCP Server stopped

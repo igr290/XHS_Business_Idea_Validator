@@ -1,0 +1,47 @@
+{
+  "combined_analysis": {
+    "success": true,
+    "analysis": {
+      "overall_score": 75,
+      "market_validation_summary": "珠海市场对正宗新会陈皮有较高需求，尤其在送礼和高品质陈皮方面。然而，由于市场上假冒产品的问题和消费信任度缺乏，消费者在购买时存在顾虑。现有的解决方案如直播和直接销售渠道提供了一些购买途径，但整体市场活跃度较低。",
+      "key_pain_points": [
+        "需要驱车去新会才能买到正宗陈皮",
+        "担心买到假冒或低质量的陈皮",
+        "无可靠的购买渠道"
+      ],
+      "existing_solutions": [
+        "直播间送试用装",
+        "在珠海市淇澳岛开设店铺，提供正宗新会陈皮"
+      ],
+      "market_opportunities": [
+        "提供正宗新会陈皮的验证服务",
+        "建立可信赖的线上销售平台",
+        "教育消费者关于陈皮的知识和辨别方法"
+      ],
+      "recommendations": [
+        "在珠海建立体验店，提供产品鉴定和品鉴服务",
+        "开发在线销售渠道，提供详细的产品信息和追溯服务",
+        "利用社交媒体和直播平台加强品牌宣传和客户互动"
+      ],
+      "metadata": {
+        "total_posts_analyzed": 20,
+        "relevant_posts": 19,
+        "avg_engagement_score": 4.315789473684211,
+        "avg_sentiment": 0.05263157894736842,
+        "sentiment_distribution": {
+          "positive": 1,
+          "neutral": 16,
+          "negative": 2
+        },
+        "total_comments_analyzed": 92,
+        "recent_posts_30days": 0,
+        "top_posts_engagement": [
+          613,
+          172,
+          99
+        ],
+        "analysis_date": "2026-01-05T09:19:00.018882"
+      }
+    }
+  }
+}

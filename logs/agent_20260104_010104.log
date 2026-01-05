@@ -1,0 +1,375 @@
+2026-01-04 01:01:04,064 - root - INFO - ============================================================
+2026-01-04 01:01:04,064 - root - INFO - Logging initialized. Level: INFO
+2026-01-04 01:01:04,064 - root - INFO - Log file: E:\Business_Idea_Validator\agent_system\logs\agent_20260104_010104.log
+2026-01-04 01:01:04,066 - root - INFO - ============================================================
+2026-01-04 01:01:04,066 - agents.context_store - INFO - ContextStore initialized with TTL=3600s
+2026-01-04 01:01:04,066 - mcp.xhs_server - INFO - XHS MCP Server initialized
+2026-01-04 01:01:04,067 - mcp.xhs_server - INFO - XHS MCP Server started
+2026-01-04 01:01:04,067 - mcp.llm_server - INFO - LLM MCP Server initialized
+2026-01-04 01:01:04,068 - mcp.llm_server - INFO - LLM Client initialized: model=gpt-4o
+2026-01-04 01:01:05,815 - mcp.llm_server - INFO - LLM Client started
+2026-01-04 01:01:05,815 - mcp.llm_server - INFO - LLM MCP Server started
+2026-01-04 01:01:05,817 - mcp.storage_server - INFO - Storage MCP Server initialized: dir=agent_context/checkpoints
+2026-01-04 01:01:05,817 - mcp.storage_server - INFO - Storage MCP Server started
+2026-01-04 01:01:05,818 - agents.context_store - INFO - Registered agent: orchestrator (orchestrator)
+2026-01-04 01:01:05,818 - agent.orchestrator - INFO - Agent initialized: orchestrator (type=orchestrator)
+2026-01-04 01:01:05,818 - agent.orchestrator - INFO - Agent started: orchestrator
+2026-01-04 01:01:05,820 - agents.context_store - INFO - Registered agent: keyword_agent (keyword)
+2026-01-04 01:01:05,820 - agent.keyword_agent - INFO - Agent initialized: keyword_agent (type=keyword)
+2026-01-04 01:01:05,820 - agents.context_store - INFO - Registered agent: scraper_agent (scraper)
+2026-01-04 01:01:05,821 - agent.scraper_agent - INFO - Agent initialized: scraper_agent (type=scraper)
+2026-01-04 01:01:05,821 - agents.context_store - INFO - Registered agent: analyzer_agent (analyzer)
+2026-01-04 01:01:05,821 - agent.analyzer_agent - INFO - Agent initialized: analyzer_agent (type=analyzer)
+2026-01-04 01:01:05,821 - agents.context_store - INFO - Registered agent: reporter_agent (reporter)
+2026-01-04 01:01:05,821 - agent.reporter_agent - INFO - Agent initialized: reporter_agent (type=reporter)
+2026-01-04 01:01:05,821 - agent.keyword_agent - INFO - Agent started: keyword_agent
+2026-01-04 01:01:05,821 - agent.orchestrator - INFO - Subagent keyword_agent started
+2026-01-04 01:01:05,821 - agent.scraper_agent - INFO - Agent started: scraper_agent
+2026-01-04 01:01:05,821 - agent.orchestrator - INFO - Subagent scraper_agent started
+2026-01-04 01:01:05,821 - agent.analyzer_agent - INFO - Agent started: analyzer_agent
+2026-01-04 01:01:05,821 - agent.orchestrator - INFO - Subagent analyzer_agent started
+2026-01-04 01:01:05,821 - agent.reporter_agent - INFO - Agent started: reporter_agent
+2026-01-04 01:01:05,821 - agent.orchestrator - INFO - Subagent reporter_agent started
+2026-01-04 01:01:05,823 - agent.orchestrator - INFO - Orchestrator started
+2026-01-04 01:01:05,823 - agents.context_store - INFO - Created run context: deepseek私有化部署_20260104_010105_6d84432e
+2026-01-04 01:01:05,823 - agent.orchestrator - INFO - Starting validation for: deepseek私有化部署 (run_id: deepseek私有化部署_20260104_010105_6d84432e)
+2026-01-04 01:01:05,823 - agent.orchestrator - INFO - 快速模式：直接使用用户输入作为搜索关键词 - 'deepseek私有化部署'
+2026-01-04 01:01:05,823 - agent.orchestrator - INFO - [快速模式] 直接使用用户输入作为搜索关键词: deepseek私有化部署
+2026-01-04 01:01:05,824 - agent.scraper - INFO - [SCRAPER_AGENT] About to scrape with 1 keyword(s): ['deepseek私有化部署']
+2026-01-04 01:01:05,824 - agents.skills.scraper_skills - INFO - Batch scraping with comments for 1 keywords
+2026-01-04 01:01:05,824 - agents.skills.scraper_skills - INFO - Batch scraping for 1 keywords
+2026-01-04 01:01:05,824 - agents.skills.scraper_skills - INFO - Searching posts for keyword: deepseek私有化部署, pages: 2
+2026-01-04 01:01:05,824 - agent.scraper_agent - INFO - [MCP.XHS] Request: search_notes
+2026-01-04 01:01:05,824 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:09,945 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:10,954 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:13,595 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:13,597 - mcp.xhs_server - INFO - Search complete: 26 notes in 7.77s
+2026-01-04 01:01:13,597 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 01:01:13,599 - agents.skills.scraper_skills - INFO - Found 26 notes for 'deepseek私有化部署'
+2026-01-04 01:01:13,599 - agents.skills.scraper_skills - INFO - Found 20 notes for 'deepseek私有化部署'
+2026-01-04 01:01:13,599 - agents.skills.scraper_skills - INFO - Batch getting comments for 20 notes
+2026-01-04 01:01:13,599 - agent.scraper_agent - INFO - [MCP.XHS] Request: batch_get_comments
+2026-01-04 01:01:13,599 - mcp.xhs_server - INFO - Batch getting comments for 20 notes (with 2.0s delay)
+2026-01-04 01:01:13,600 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:15,333 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:15,334 - mcp.xhs_server - INFO - Got 15 comments in 1.73s
+2026-01-04 01:01:15,334 - mcp.xhs_server - INFO - Got 15 comments for note 67b2fc5e000000002a00f3f1 (1/20)
+2026-01-04 01:01:17,349 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:18,761 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:18,761 - mcp.xhs_server - INFO - Got 15 comments in 1.41s
+2026-01-04 01:01:18,763 - mcp.xhs_server - INFO - Got 15 comments for note 67aae3bc0000000018019f90 (2/20)
+2026-01-04 01:01:20,774 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:22,270 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:22,272 - mcp.xhs_server - INFO - Got 15 comments in 1.50s
+2026-01-04 01:01:22,272 - mcp.xhs_server - INFO - Got 15 comments for note 67b1966b000000002802820f (3/20)
+2026-01-04 01:01:24,284 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:25,519 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:25,521 - mcp.xhs_server - INFO - Got 2 comments in 1.24s
+2026-01-04 01:01:25,521 - mcp.xhs_server - INFO - Got 2 comments for note 67a75d99000000001800c6ab (4/20)
+2026-01-04 01:01:27,527 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:29,425 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:29,428 - mcp.xhs_server - INFO - Got 0 comments in 1.90s
+2026-01-04 01:01:29,428 - mcp.xhs_server - INFO - Got 0 comments for note 67e29b0c000000000603cacf (5/20)
+2026-01-04 01:01:31,444 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:34,073 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:34,074 - mcp.xhs_server - INFO - Got 10 comments in 2.63s
+2026-01-04 01:01:34,074 - mcp.xhs_server - INFO - Got 10 comments for note 67ada1f50000000018007a3a (6/20)
+2026-01-04 01:01:36,083 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:38,442 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:38,442 - mcp.xhs_server - INFO - Got 15 comments in 2.36s
+2026-01-04 01:01:38,444 - mcp.xhs_server - INFO - Got 15 comments for note 679ce70a000000001801041a (7/20)
+2026-01-04 01:01:40,451 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:41,959 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:41,965 - mcp.xhs_server - INFO - Got 10 comments in 1.51s
+2026-01-04 01:01:41,965 - mcp.xhs_server - INFO - Got 10 comments for note 67aad4f40000000029034c0a (8/20)
+2026-01-04 01:01:43,965 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:47,160 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:47,164 - mcp.xhs_server - INFO - Got 15 comments in 3.20s
+2026-01-04 01:01:47,164 - mcp.xhs_server - INFO - Got 15 comments for note 67e01ffb000000000e004a7d (9/20)
+2026-01-04 01:01:49,173 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:52,226 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:52,231 - mcp.xhs_server - INFO - Got 15 comments in 3.06s
+2026-01-04 01:01:52,233 - mcp.xhs_server - INFO - Got 15 comments for note 679c9aba0000000029036cd0 (10/20)
+2026-01-04 01:01:54,235 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:56,207 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:56,208 - mcp.xhs_server - INFO - Got 15 comments in 1.97s
+2026-01-04 01:01:56,208 - mcp.xhs_server - INFO - Got 15 comments for note 67d5977f000000001d023e91 (11/20)
+2026-01-04 01:01:58,218 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:01:59,851 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:01:59,864 - mcp.xhs_server - INFO - Got 4 comments in 1.65s
+2026-01-04 01:01:59,865 - mcp.xhs_server - INFO - Got 4 comments for note 67d9a257000000000903a2c8 (12/20)
+2026-01-04 01:02:01,882 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:04,041 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:04,042 - mcp.xhs_server - INFO - Got 11 comments in 2.16s
+2026-01-04 01:02:04,042 - mcp.xhs_server - INFO - Got 11 comments for note 67a8b47f000000002802a841 (13/20)
+2026-01-04 01:02:06,047 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:07,767 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:07,770 - mcp.xhs_server - INFO - Got 1 comments in 1.72s
+2026-01-04 01:02:07,770 - mcp.xhs_server - INFO - Got 1 comments for note 67d8d661000000001c009114 (14/20)
+2026-01-04 01:02:09,775 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:11,351 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:11,351 - mcp.xhs_server - INFO - Got 6 comments in 1.58s
+2026-01-04 01:02:11,352 - mcp.xhs_server - INFO - Got 6 comments for note 67990192000000001801a0d5 (15/20)
+2026-01-04 01:02:13,367 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:14,971 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:14,973 - mcp.xhs_server - INFO - Got 15 comments in 1.61s
+2026-01-04 01:02:14,973 - mcp.xhs_server - INFO - Got 15 comments for note 67b732ee000000001201dd14 (16/20)
+2026-01-04 01:02:16,979 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:19,804 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:19,805 - mcp.xhs_server - INFO - Got 5 comments in 2.83s
+2026-01-04 01:02:19,806 - mcp.xhs_server - INFO - Got 5 comments for note 68407d2a0000000023003a0d (17/20)
+2026-01-04 01:02:21,813 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:23,309 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:23,309 - mcp.xhs_server - INFO - Got 2 comments in 1.50s
+2026-01-04 01:02:23,311 - mcp.xhs_server - INFO - Got 2 comments for note 67b58aa4000000002503edc2 (18/20)
+2026-01-04 01:02:25,317 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:27,643 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:27,644 - mcp.xhs_server - INFO - Got 10 comments in 2.33s
+2026-01-04 01:02:27,645 - mcp.xhs_server - INFO - Got 10 comments for note 679f471c000000002900d9fe (19/20)
+2026-01-04 01:02:29,656 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 01:02:33,776 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 01:02:33,780 - mcp.xhs_server - INFO - Got 14 comments in 4.12s
+2026-01-04 01:02:33,780 - mcp.xhs_server - INFO - Got 14 comments for note 67a0777d000000001800760d (20/20)
+2026-01-04 01:02:33,780 - mcp.xhs_server - INFO - Batch complete: 195 comments in 80.18s
+2026-01-04 01:02:33,781 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 01:02:33,782 - agents.skills.scraper_skills - INFO - Batch complete: 195 comments total
+2026-01-04 01:02:33,784 - agents.skills.scraper_skills - INFO - Got 195 comments for 'deepseek私有化部署'
+2026-01-04 01:02:33,784 - agents.skills.scraper_skills - INFO - Batch scrape complete: 20 notes, 20 comment batches in 87.96s
+2026-01-04 01:02:33,784 - agents.skills.scraper_skills - INFO - Batch scrape with comments complete: 20 posts, 19 with comments, 195 total comments
+2026-01-04 01:02:33,784 - agent.scraper_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-04 01:02:34,024 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\deepseek私有化部署_20260104_010105_6d84432e\scraping_complete.json
+2026-01-04 01:02:34,024 - agent.scraper_agent - INFO - [MCP.STORAGE] Response received
+2026-01-04 01:02:34,024 - agent.scraper_agent - INFO - Checkpoint saved: deepseek私有化部署_20260104_010105_6d84432e/scraping_complete
+2026-01-04 01:02:34,025 - agent.orchestrator - INFO - scrape_data completed: 20 posts, 19 with comments
+2026-01-04 01:02:34,025 - agents.skills.analyzer_skills - INFO - Batch analyzing 20 posts with comments
+2026-01-04 01:02:34,027 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: DeepSeek-R1 本地化部署 | 保姆级指南 (id=67b2fc5e000000002a00f3f1)
+2026-01-04 01:02:34,027 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:02:34,034 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:02:34,036 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:02:39,927 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:02:39,943 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:02:39,946 - mcp.llm_server - INFO - Generated structured output in 5.91s
+2026-01-04 01:02:39,947 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:02:39,947 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:02:39,947 - agents.skills.analyzer_skills - INFO - Analysis complete for 67b2fc5e000000002a00f3f1: relevant=True, sentiment=neutral
+2026-01-04 01:02:39,947 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: Deepseek有必要做私人知识库吗？ (id=67aae3bc0000000018019f90)
+2026-01-04 01:02:39,947 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:02:39,950 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:02:39,950 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:02:44,421 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:02:44,425 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:02:44,425 - mcp.llm_server - INFO - Generated structured output in 4.48s
+2026-01-04 01:02:44,426 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:02:44,428 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:02:44,428 - agents.skills.analyzer_skills - INFO - Analysis complete for 67aae3bc0000000018019f90: relevant=True, sentiment=negative
+2026-01-04 01:02:44,430 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 我不理解，为什么都在看ds的本地部署？ (id=67b1966b000000002802820f)
+2026-01-04 01:02:44,430 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:02:44,431 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:02:44,432 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:02:50,119 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:02:50,124 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:02:50,127 - mcp.llm_server - INFO - Generated structured output in 5.69s
+2026-01-04 01:02:50,132 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:02:50,132 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:02:50,134 - agents.skills.analyzer_skills - INFO - Analysis complete for 67b1966b000000002802820f: relevant=True, sentiment=neutral
+2026-01-04 01:02:50,135 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 个人和小公司不要人从众去部署 Deepseek (id=67a75d99000000001800c6ab)
+2026-01-04 01:02:50,135 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:02:50,141 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:02:50,151 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:02:54,700 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:02:54,703 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:02:54,705 - mcp.llm_server - INFO - Generated structured output in 4.56s
+2026-01-04 01:02:54,705 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:02:54,706 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:02:54,706 - agents.skills.analyzer_skills - INFO - Analysis complete for 67a75d99000000001800c6ab: relevant=True, sentiment=neutral
+2026-01-04 01:02:54,706 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 适合私有化部署DeepSeek的4种典型需求 (id=67e29b0c000000000603cacf)
+2026-01-04 01:02:54,706 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:02:54,709 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:02:54,709 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:02:57,781 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:02:57,783 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:02:57,783 - mcp.llm_server - INFO - Generated structured output in 3.07s
+2026-01-04 01:02:57,783 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:02:57,784 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:02:57,784 - agents.skills.analyzer_skills - INFO - Analysis complete for 67e29b0c000000000603cacf: relevant=True, sentiment=neutral
+2026-01-04 01:02:57,784 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: DeepSeek私有化部署需求疯涨？背后真相… (id=67ada1f50000000018007a3a)
+2026-01-04 01:02:57,784 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:02:57,786 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:02:57,787 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:02,146 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:02,147 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:02,148 - mcp.llm_server - INFO - Generated structured output in 4.36s
+2026-01-04 01:03:02,148 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:02,148 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:02,148 - agents.skills.analyzer_skills - INFO - Analysis complete for 67ada1f50000000018007a3a: relevant=True, sentiment=neutral
+2026-01-04 01:03:02,148 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 有没有必要本地部署deepseek的一点看法 (id=679ce70a000000001801041a)
+2026-01-04 01:03:02,149 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:02,151 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:02,151 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:05,312 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:05,314 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:05,315 - mcp.llm_server - INFO - Generated structured output in 3.16s
+2026-01-04 01:03:05,315 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:05,317 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:05,317 - agents.skills.analyzer_skills - INFO - Analysis complete for 679ce70a000000001801041a: relevant=True, sentiment=neutral
+2026-01-04 01:03:05,318 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 利用Deepseek进行本地部署+搭建个人知识库 (id=67aad4f40000000029034c0a)
+2026-01-04 01:03:05,318 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:05,321 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:05,322 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:11,182 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:11,186 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:11,186 - mcp.llm_server - INFO - Generated structured output in 5.86s
+2026-01-04 01:03:11,186 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:11,187 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:11,187 - agents.skills.analyzer_skills - INFO - Analysis complete for 67aad4f40000000029034c0a: relevant=True, sentiment=neutral
+2026-01-04 01:03:11,187 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 本地部署一个deepseek-R1:1.5b有啥用？ (id=67e01ffb000000000e004a7d)
+2026-01-04 01:03:11,189 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:11,190 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:11,190 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:11,356 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:11,357 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:11,358 - mcp.llm_server - INFO - Generated structured output in 0.17s
+2026-01-04 01:03:11,359 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:11,359 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:11,359 - agents.skills.analyzer_skills - INFO - Analysis complete for 67e01ffb000000000e004a7d: relevant=True, sentiment=negative
+2026-01-04 01:03:11,359 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 在自己的电脑上部署DeepSeek-r1 太爽了 (id=679c9aba0000000029036cd0)
+2026-01-04 01:03:11,361 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:11,363 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:11,364 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:16,313 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:16,316 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:16,316 - mcp.llm_server - INFO - Generated structured output in 4.95s
+2026-01-04 01:03:16,316 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:16,317 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:16,317 - agents.skills.analyzer_skills - INFO - Analysis complete for 679c9aba0000000029036cd0: relevant=True, sentiment=positive
+2026-01-04 01:03:16,317 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=67d5977f000000001d023e91)
+2026-01-04 01:03:16,317 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:16,321 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:16,321 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:16,491 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:16,494 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:16,494 - mcp.llm_server - INFO - Generated structured output in 0.17s
+2026-01-04 01:03:16,494 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:16,495 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:16,495 - agents.skills.analyzer_skills - INFO - Analysis complete for 67d5977f000000001d023e91: relevant=True, sentiment=neutral
+2026-01-04 01:03:16,495 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 【AI客户问题】部署72B知识库需要几张卡 (id=67d9a257000000000903a2c8)
+2026-01-04 01:03:16,497 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:16,498 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:16,501 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:21,118 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:21,121 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:21,123 - mcp.llm_server - INFO - Generated structured output in 4.62s
+2026-01-04 01:03:21,123 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:21,124 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:21,140 - agents.skills.analyzer_skills - INFO - Analysis complete for 67d9a257000000000903a2c8: relevant=True, sentiment=neutral
+2026-01-04 01:03:21,141 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: Deepseek独立部署各种版本区别看表秒懂 (id=67a8b47f000000002802a841)
+2026-01-04 01:03:21,143 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:21,170 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:21,170 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:25,020 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:25,023 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:25,023 - mcp.llm_server - INFO - Generated structured output in 3.85s
+2026-01-04 01:03:25,027 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:25,033 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:25,033 - agents.skills.analyzer_skills - INFO - Analysis complete for 67a8b47f000000002802a841: relevant=True, sentiment=neutral
+2026-01-04 01:03:25,033 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 30w预算能部署满血版DeepSeek R1吗？ (id=67d8d661000000001c009114)
+2026-01-04 01:03:25,035 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:25,037 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:25,037 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:27,542 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:27,545 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:27,547 - mcp.llm_server - INFO - Generated structured output in 2.51s
+2026-01-04 01:03:27,548 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:27,548 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:27,548 - agents.skills.analyzer_skills - INFO - Analysis complete for 67d8d661000000001c009114: relevant=True, sentiment=positive
+2026-01-04 01:03:27,548 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: Windows 本地部署 Deepseek 小白教程 (id=67990192000000001801a0d5)
+2026-01-04 01:03:27,550 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:27,554 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:27,555 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:31,905 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:31,906 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:31,906 - mcp.llm_server - INFO - Generated structured output in 4.35s
+2026-01-04 01:03:31,908 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:31,908 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:31,910 - agents.skills.analyzer_skills - INFO - Analysis complete for 67990192000000001801a0d5: relevant=True, sentiment=positive
+2026-01-04 01:03:31,910 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: Deepseek本地部署RAG知识库教程 (id=67b732ee000000001201dd14)
+2026-01-04 01:03:31,915 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:31,917 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:31,917 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:37,615 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:37,616 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:37,616 - mcp.llm_server - INFO - Generated structured output in 5.70s
+2026-01-04 01:03:37,616 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:37,616 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:37,616 - agents.skills.analyzer_skills - INFO - Analysis complete for 67b732ee000000001201dd14: relevant=True, sentiment=neutral
+2026-01-04 01:03:37,620 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 【dify避坑】私有化部署的坑，帮你踩过了！ (id=68407d2a0000000023003a0d)
+2026-01-04 01:03:37,620 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:37,623 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:37,623 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:41,700 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:41,704 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:41,704 - mcp.llm_server - INFO - Generated structured output in 4.08s
+2026-01-04 01:03:41,704 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:41,706 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:41,706 - agents.skills.analyzer_skills - INFO - Analysis complete for 68407d2a0000000023003a0d: relevant=True, sentiment=positive
+2026-01-04 01:03:41,706 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: 随时随地访问家中Deepseek本地大模型(1) (id=67b58aa4000000002503edc2)
+2026-01-04 01:03:41,706 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:41,707 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:41,709 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:45,557 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:45,559 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:45,559 - mcp.llm_server - INFO - Generated structured output in 3.85s
+2026-01-04 01:03:45,559 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:45,561 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:45,562 - agents.skills.analyzer_skills - INFO - Analysis complete for 67b58aa4000000002503edc2: relevant=True, sentiment=positive
+2026-01-04 01:03:45,562 - agents.skills.analyzer_skills - INFO - Analyzing post with comments:  (id=679f471c000000002900d9fe)
+2026-01-04 01:03:45,562 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:45,563 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:45,565 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:49,383 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:49,385 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:49,385 - mcp.llm_server - INFO - Generated structured output in 3.82s
+2026-01-04 01:03:49,385 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:49,385 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:49,387 - agents.skills.analyzer_skills - INFO - Analysis complete for 679f471c000000002900d9fe: relevant=True, sentiment=positive
+2026-01-04 01:03:49,387 - agents.skills.analyzer_skills - INFO - Analyzing post with comments: Deekseek本地部署，大大助力法律文书工作。 (id=67a0777d000000001800760d)
+2026-01-04 01:03:49,387 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:49,389 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:49,389 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:52,146 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:52,149 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:52,150 - mcp.llm_server - INFO - Generated structured output in 2.76s
+2026-01-04 01:03:52,150 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:52,151 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:52,151 - agents.skills.analyzer_skills - INFO - Analysis complete for 67a0777d000000001800760d: relevant=True, sentiment=neutral
+2026-01-04 01:03:52,151 - agents.skills.analyzer_skills - INFO - Batch analysis complete: 20/20 successful, 20 relevant, 0 skipped
+2026-01-04 01:03:52,153 - agent.analyzer_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-04 01:03:52,484 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\deepseek私有化部署_20260104_010105_6d84432e\analysis_complete.json
+2026-01-04 01:03:52,487 - agent.analyzer_agent - INFO - [MCP.STORAGE] Response received
+2026-01-04 01:03:52,488 - agent.analyzer_agent - INFO - Checkpoint saved: deepseek私有化部署_20260104_010105_6d84432e/analysis_complete
+2026-01-04 01:03:52,489 - agent.orchestrator - INFO - analyze_posts_with_comments completed: 20 relevant posts from 20 total
+2026-01-04 01:03:52,491 - agent.analyzer_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 01:03:52,501 - agent.analyzer_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 01:03:52,502 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 01:03:58,287 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 01:03:58,290 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 01:03:58,290 - mcp.llm_server - INFO - Generated structured output in 5.79s
+2026-01-04 01:03:58,290 - agent.analyzer_agent - INFO - [MCP.LLM] Response received
+2026-01-04 01:03:58,291 - agent.analyzer_agent - INFO - [LLM] Response received
+2026-01-04 01:03:58,297 - agent.analyzer - INFO - Combined analysis complete: score=75/100
+2026-01-04 01:03:58,298 - agents.skills.reporter_skills - INFO - Generating HTML report with enhanced data
+2026-01-04 01:03:58,300 - agents.skills.reporter_skills - INFO - HTML report generated: 8907 characters
+2026-01-04 01:03:58,302 - agents.skills.reporter_skills - INFO - Saving report to: reports/deepseek私有化部署_20260104_010358.html
+2026-01-04 01:03:58,352 - agents.skills.reporter_skills - INFO - Report saved: reports/deepseek私有化部署_20260104_010358.html (9819 bytes)
+2026-01-04 01:03:58,353 - agent.reporter_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-04 01:03:58,380 - mcp.storage_server - INFO - Checkpoint saved: agent_context\checkpoints\deepseek私有化部署_20260104_010105_6d84432e\report_saved.json
+2026-01-04 01:03:58,382 - agent.reporter_agent - INFO - [MCP.STORAGE] Response received
+2026-01-04 01:03:58,383 - agent.reporter_agent - INFO - Checkpoint saved: deepseek私有化部署_20260104_010105_6d84432e/report_saved
+2026-01-04 01:03:58,384 - agent.orchestrator - INFO - Validation completed successfully in 172.56s
+2026-01-04 01:03:58,385 - agent.orchestrator - INFO - Agent stopped: orchestrator
+2026-01-04 01:03:58,385 - agent.orchestrator - INFO - Orchestrator stopped
+2026-01-04 01:03:58,385 - mcp.xhs_server - INFO - XHS MCP Server stopped
+2026-01-04 01:03:58,386 - mcp.llm_server - INFO - LLM Client closed
+2026-01-04 01:03:58,387 - mcp.llm_server - INFO - LLM MCP Server stopped
+2026-01-04 01:03:58,387 - mcp.storage_server - INFO - Storage MCP Server stopped

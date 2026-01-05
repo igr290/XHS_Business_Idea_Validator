@@ -1,0 +1,12 @@
+2026-01-05 09:26:00,645 - root - INFO - ============================================================
+2026-01-05 09:26:00,645 - root - INFO - Logging initialized. Level: INFO
+2026-01-05 09:26:00,645 - root - INFO - Log file: D:\agent_system\logs\agent_20260105_092600.log
+2026-01-05 09:26:00,646 - root - INFO - ============================================================
+2026-01-05 09:26:00,646 - mcp.xhs_server - INFO - XHS MCP Server initialized
+2026-01-05 09:26:00,647 - mcp.xhs_server - INFO - XHS MCP Server started
+2026-01-05 09:26:00,647 - mcp.llm_server - INFO - LLM MCP Server initialized
+2026-01-05 09:26:00,647 - mcp.llm_server - INFO - LLM Client initialized: model=gpt-4o
+2026-01-05 09:26:01,739 - mcp.llm_server - INFO - LLM Client started
+2026-01-05 09:26:01,742 - mcp.llm_server - INFO - LLM MCP Server started
+2026-01-05 09:26:01,809 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001961933E590>

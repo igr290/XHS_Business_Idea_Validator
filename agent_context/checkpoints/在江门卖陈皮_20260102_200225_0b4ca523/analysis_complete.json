@@ -1,0 +1,81 @@
+{
+  "posts_analyses": {
+    "success": true,
+    "total_posts": 60,
+    "analyses": [
+      {
+        "note_id": "694bc31e000000001e00a443",
+        "title": "",
+        "analysis": {
+          "relevant": true,
+          "pain_points": [
+            "工业假皮影响消费者信任",
+            "对正宗陈皮的需求"
+          ],
+          "solutions_mentioned": [
+            "展示正宗新会陈皮",
+            "强调自然柑橘香"
+          ],
+          "market_signals": [
+            "消费者对正宗陈皮的兴趣",
+            "重视产品真实性"
+          ],
+          "sentiment": "positive",
+          "engagement_score": 6,
+          "analysis_summary": "笔记与在江门卖陈皮的业务创意高度相关，强调了正宗新会陈皮的吸引力和消费者对正品的需求。"
+        }
+      }
+    ],
+    "relevant_posts": [
+      {
+        "post": {
+          "note_id": "694bc31e000000001e00a443",
+          "title": "",
+          "desc": "新会陈皮晒场实拍！工业假皮别来沾边 刚扎进新会的陈皮晒场，直接被这满屏的橙黄震撼到了！🍊 风一吹全是自然的柑橘香混着陈",
+          "type": "normal",
+          "publish_time": 0,
+          "liked_count": 4,
+          "collected_count": 4,
+          "shared_count": 0,
+          "comments_count": 1,
+          "user_id": "",
+          "user_nickname": "新会陈皮阿兰",
+          "user_avatar": "",
+          "cover_url": null,
+          "images": [],
+          "keyword_matched": "江门陈皮"
+        },
+        "analysis": {
+          "relevant": true,
+          "pain_points": [
+            "工业假皮影响消费者信任",
+            "对正宗陈皮的需求"
+          ],
+          "solutions_mentioned": [
+            "展示正宗新会陈皮",
+            "强调自然柑橘香"
+          ],
+          "market_signals": [
+            "消费者对正宗陈皮的兴趣",
+            "重视产品真实性"
+          ],
+          "sentiment": "positive",
+          "engagement_score": 6,
+          "analysis_summary": "笔记与在江门卖陈皮的业务创意高度相关，强调了正宗新会陈皮的吸引力和消费者对正品的需求。"
+        }
+      }
+    ],
+    "summary": {
+      "total_posts": 60,
+      "analyzed_count": 1,
+      "relevant_count": 1,
+      "relevance_rate": 1.0,
+      "sentiment_distribution": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      },
+      "avg_engagement_score": 6.0
+    }
+  }
+}

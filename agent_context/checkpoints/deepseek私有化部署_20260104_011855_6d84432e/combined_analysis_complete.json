@@ -1,0 +1,163 @@
+{
+  "combined_analysis": {
+    "success": true,
+    "analysis": {
+      "overall_score": 75,
+      "market_validation_summary": "The market for 'deepseek private deployment' shows a moderate level of demand with a significant interest in local deployment and AI solutions. The presence of technical pain points and a neutral sentiment overall suggests room for improvement and opportunity for new entrants. Despite limited recent activity, high engagement on top posts indicates a potential niche market.",
+      "key_pain_points": [
+        "AI content detection",
+        "High configuration requirements",
+        "Slow download speeds"
+      ],
+      "existing_solutions": [
+        "Local deployment",
+        "Command line interaction"
+      ],
+      "market_opportunities": [
+        "Simplify installation process",
+        "Provide detailed error solutions",
+        "Enhance offline functionality"
+      ],
+      "platform_insights": [
+        {
+          "platform": "xhs",
+          "insights": "High interest in local AI deployment solutions with detailed tutorials being highly engaged.",
+          "data_summary": {
+            "relevant_posts": 20,
+            "success_rate": "20/20",
+            "avg_engagement_score": 7.8,
+            "sentiment_tendency": "neutral",
+            "top_post_engagement": 50723,
+            "common_pain_points": [
+              "High configuration requirements",
+              "Slow download speeds"
+            ]
+          }
+        },
+        {
+          "platform": "xhs",
+          "insights": "小红书平台分析：共分析 20 条相关帖子（包含评论）",
+          "data_summary": {
+            "total_posts": 20,
+            "successful_count": 20,
+            "failed_count": 0,
+            "skipped_count": 0,
+            "relevant_count": 20,
+            "relevance_rate": 1.0,
+            "sentiment_distribution": {
+              "positive": 3,
+              "negative": 4,
+              "neutral": 13
+            },
+            "avg_engagement_score": 7.8
+          }
+        }
+      ],
+      "recommendations": [
+        "Develop a user-friendly installation guide",
+        "Optimize software for lower hardware requirements",
+        "Implement faster download solutions"
+      ],
+      "metadata": {
+        "total_posts_analyzed": 20,
+        "relevant_posts": 20,
+        "avg_engagement_score": 7.8,
+        "avg_sentiment": -0.05,
+        "sentiment_distribution": {
+          "positive": 1,
+          "neutral": 14,
+          "negative": 5
+        },
+        "total_comments_analyzed": 241,
+        "recent_posts_30days": 0,
+        "top_posts_engagement": [
+          50723,
+          7150,
+          6991
+        ],
+        "analysis_date": "2026-01-04T01:21:19.322521",
+        "word_frequency_analysis": {
+          "pain_points_tags": [
+            {
+              "tag": "AI检测",
+              "count": 1,
+              "sentiment": "neutral",
+              "keywords": [
+                "AI content detection"
+              ]
+            },
+            {
+              "tag": "配置要求",
+              "count": 1,
+              "sentiment": "negative",
+              "keywords": [
+                "High configuration requirements"
+              ]
+            },
+            {
+              "tag": "下载速度",
+              "count": 1,
+              "sentiment": "negative",
+              "keywords": [
+                "Slow download speeds"
+              ]
+            }
+          ],
+          "solutions_tags": [],
+          "opportunities_tags": [
+            {
+              "tag": "安装简化",
+              "count": 1,
+              "sentiment": "negative",
+              "keywords": [
+                "Simplify installation process"
+              ]
+            },
+            {
+              "tag": "错误解决",
+              "count": 1,
+              "sentiment": "negative",
+              "keywords": [
+                "Provide detailed error solutions"
+              ]
+            },
+            {
+              "tag": "离线功能",
+              "count": 1,
+              "sentiment": "neutral",
+              "keywords": [
+                "Enhance offline functionality"
+              ]
+            }
+          ],
+          "recommendations_tags": [
+            {
+              "tag": "安装指南",
+              "count": 1,
+              "sentiment": "neutral",
+              "keywords": [
+                "user-friendly installation guide"
+              ]
+            },
+            {
+              "tag": "硬件要求",
+              "count": 1,
+              "sentiment": "neutral",
+              "keywords": [
+                "lower hardware requirements"
+              ]
+            },
+            {
+              "tag": "下载速度",
+              "count": 1,
+              "sentiment": "neutral",
+              "keywords": [
+                "faster download solutions"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

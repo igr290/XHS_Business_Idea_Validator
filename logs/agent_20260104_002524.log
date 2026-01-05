@@ -1,0 +1,355 @@
+2026-01-04 00:25:25,012 - root - INFO - ============================================================
+2026-01-04 00:25:25,012 - root - INFO - Logging initialized. Level: INFO
+2026-01-04 00:25:25,012 - root - INFO - Log file: E:\Business_Idea_Validator\agent_system\logs\agent_20260104_002524.log
+2026-01-04 00:25:25,012 - root - INFO - ============================================================
+2026-01-04 00:25:25,012 - agents.context_store - INFO - ContextStore initialized with TTL=3600s
+2026-01-04 00:25:25,013 - mcp.xhs_server - INFO - XHS MCP Server initialized
+2026-01-04 00:25:25,013 - mcp.xhs_server - INFO - XHS MCP Server started
+2026-01-04 00:25:25,013 - mcp.llm_server - INFO - LLM MCP Server initialized
+2026-01-04 00:25:25,013 - mcp.llm_server - INFO - LLM Client initialized: model=gpt-4o
+2026-01-04 00:25:27,005 - mcp.llm_server - INFO - LLM Client started
+2026-01-04 00:25:27,005 - mcp.llm_server - INFO - LLM MCP Server started
+2026-01-04 00:25:27,006 - mcp.storage_server - INFO - Storage MCP Server initialized: dir=agent_context/checkpoints
+2026-01-04 00:25:27,006 - mcp.storage_server - INFO - Storage MCP Server started
+2026-01-04 00:25:27,009 - agents.context_store - INFO - Registered agent: orchestrator (orchestrator)
+2026-01-04 00:25:27,010 - agent.orchestrator - INFO - Agent initialized: orchestrator (type=orchestrator)
+2026-01-04 00:25:27,010 - agent.orchestrator - INFO - Agent started: orchestrator
+2026-01-04 00:25:27,010 - agents.context_store - INFO - Registered agent: keyword_agent (keyword)
+2026-01-04 00:25:27,010 - agent.keyword_agent - INFO - Agent initialized: keyword_agent (type=keyword)
+2026-01-04 00:25:27,010 - agents.context_store - INFO - Registered agent: scraper_agent (scraper)
+2026-01-04 00:25:27,010 - agent.scraper_agent - INFO - Agent initialized: scraper_agent (type=scraper)
+2026-01-04 00:25:27,010 - agents.context_store - INFO - Registered agent: analyzer_agent (analyzer)
+2026-01-04 00:25:27,012 - agent.analyzer_agent - INFO - Agent initialized: analyzer_agent (type=analyzer)
+2026-01-04 00:25:27,012 - agents.context_store - INFO - Registered agent: reporter_agent (reporter)
+2026-01-04 00:25:27,012 - agent.reporter_agent - INFO - Agent initialized: reporter_agent (type=reporter)
+2026-01-04 00:25:27,012 - agent.keyword_agent - INFO - Agent started: keyword_agent
+2026-01-04 00:25:27,012 - agent.orchestrator - INFO - Subagent keyword_agent started
+2026-01-04 00:25:27,014 - agent.scraper_agent - INFO - Agent started: scraper_agent
+2026-01-04 00:25:27,014 - agent.orchestrator - INFO - Subagent scraper_agent started
+2026-01-04 00:25:27,014 - agent.analyzer_agent - INFO - Agent started: analyzer_agent
+2026-01-04 00:25:27,014 - agent.orchestrator - INFO - Subagent analyzer_agent started
+2026-01-04 00:25:27,014 - agent.reporter_agent - INFO - Agent started: reporter_agent
+2026-01-04 00:25:27,014 - agent.orchestrator - INFO - Subagent reporter_agent started
+2026-01-04 00:25:27,014 - agent.orchestrator - INFO - Orchestrator started
+2026-01-04 00:25:27,014 - agents.context_store - INFO - Created run context: deepseek私有化部署_20260104_002527_6d84432e
+2026-01-04 00:25:27,014 - agent.orchestrator - INFO - Starting validation for: deepseek私有化部署 (run_id: deepseek私有化部署_20260104_002527_6d84432e)
+2026-01-04 00:25:27,015 - agents.skills.keyword_skills - INFO - Generating 3 keywords for: deepseek私有化部署
+2026-01-04 00:25:27,015 - agent.keyword_agent - INFO - [LLM] Request: generate_structured
+2026-01-04 00:25:27,020 - agent.keyword_agent - INFO - [MCP.LLM] Request: generate_structured
+2026-01-04 00:25:27,020 - mcp.llm_server - INFO - [OpenAI] Request: POST
+2026-01-04 00:25:30,024 - httpx - INFO - HTTP Request: POST https://oa.api2d.net/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-04 00:25:30,045 - mcp.llm_server - INFO - [OpenAI] Response received
+2026-01-04 00:25:30,046 - mcp.llm_server - INFO - Generated structured output in 3.03s
+2026-01-04 00:25:30,047 - agent.keyword_agent - INFO - [MCP.LLM] Response received
+2026-01-04 00:25:30,047 - agent.keyword_agent - INFO - [LLM] Response received
+2026-01-04 00:25:30,047 - agents.skills.keyword_skills - INFO - Generated keywords: ['deepseek部署', '私有化软件', '数据安全企业']
+2026-01-04 00:25:30,048 - agents.skills.scraper_skills - INFO - Batch scraping with comments for 3 keywords
+2026-01-04 00:25:30,049 - agents.skills.scraper_skills - INFO - Batch scraping for 3 keywords
+2026-01-04 00:25:30,049 - agents.skills.scraper_skills - INFO - Searching posts for keyword: deepseek部署, pages: 2
+2026-01-04 00:25:30,049 - agent.scraper_agent - INFO - [MCP.XHS] Request: search_notes
+2026-01-04 00:25:30,051 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:25:35,007 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:25:36,014 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:25:57,959 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:25:57,959 - mcp.xhs_server - INFO - Search complete: 31 notes in 27.91s
+2026-01-04 00:25:57,961 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 00:25:57,962 - agents.skills.scraper_skills - INFO - Found 31 notes for 'deepseek部署'
+2026-01-04 00:25:57,962 - agents.skills.scraper_skills - INFO - Found 20 notes for 'deepseek部署'
+2026-01-04 00:25:57,962 - agents.skills.scraper_skills - INFO - Batch getting comments for 20 notes
+2026-01-04 00:25:57,962 - agent.scraper_agent - INFO - [MCP.XHS] Request: batch_get_comments
+2026-01-04 00:25:57,963 - mcp.xhs_server - INFO - Batch getting comments for 20 notes (with 2.0s delay)
+2026-01-04 00:25:57,963 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:01,341 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:01,343 - mcp.xhs_server - INFO - Got 15 comments in 3.38s
+2026-01-04 00:26:01,343 - mcp.xhs_server - INFO - Got 15 comments for note 679ce70a000000001801041a (1/20)
+2026-01-04 00:26:03,351 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:05,813 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:05,815 - mcp.xhs_server - INFO - Got 15 comments in 2.46s
+2026-01-04 00:26:05,815 - mcp.xhs_server - INFO - Got 15 comments for note 683476110000000022028cb9 (2/20)
+2026-01-04 00:26:07,824 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:09,416 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:09,417 - mcp.xhs_server - INFO - Got 15 comments in 1.59s
+2026-01-04 00:26:09,417 - mcp.xhs_server - INFO - Got 15 comments for note 67e0b5b1000000000e004db9 (3/20)
+2026-01-04 00:26:11,423 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:13,179 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:13,179 - mcp.xhs_server - INFO - Got 15 comments in 1.76s
+2026-01-04 00:26:13,180 - mcp.xhs_server - INFO - Got 15 comments for note 679c9aba0000000029036cd0 (4/20)
+2026-01-04 00:26:15,194 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:17,090 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:17,090 - mcp.xhs_server - INFO - Got 14 comments in 1.90s
+2026-01-04 00:26:17,091 - mcp.xhs_server - INFO - Got 14 comments for note 679e1c12000000001801a492 (5/20)
+2026-01-04 00:26:19,102 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:21,651 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:21,651 - mcp.xhs_server - INFO - Got 15 comments in 2.55s
+2026-01-04 00:26:21,651 - mcp.xhs_server - INFO - Got 15 comments for note 67a0fadb0000000029016288 (6/20)
+2026-01-04 00:26:23,654 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:24,832 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:24,832 - mcp.xhs_server - INFO - Got 0 comments in 1.18s
+2026-01-04 00:26:24,833 - mcp.xhs_server - INFO - Got 0 comments for note 69533752000000001e03b910 (7/20)
+2026-01-04 00:26:26,840 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:28,901 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:28,901 - mcp.xhs_server - INFO - Got 15 comments in 2.06s
+2026-01-04 00:26:28,901 - mcp.xhs_server - INFO - Got 15 comments for note 67834536000000001800d52d (8/20)
+2026-01-04 00:26:30,903 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:33,239 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:33,241 - mcp.xhs_server - INFO - Got 9 comments in 2.34s
+2026-01-04 00:26:33,241 - mcp.xhs_server - INFO - Got 9 comments for note 67afece2000000001800fa93 (9/20)
+2026-01-04 00:26:35,249 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:36,799 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:36,799 - mcp.xhs_server - INFO - Got 2 comments in 1.55s
+2026-01-04 00:26:36,799 - mcp.xhs_server - INFO - Got 2 comments for note 67c137aa0000000029025c44 (10/20)
+2026-01-04 00:26:38,808 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:40,469 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:40,469 - mcp.xhs_server - INFO - Got 15 comments in 1.66s
+2026-01-04 00:26:40,470 - mcp.xhs_server - INFO - Got 15 comments for note 67ce5cd7000000001201c81c (11/20)
+2026-01-04 00:26:42,477 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:44,248 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:44,248 - mcp.xhs_server - INFO - Got 15 comments in 1.77s
+2026-01-04 00:26:44,248 - mcp.xhs_server - INFO - Got 15 comments for note 6948cad3000000001902704a (12/20)
+2026-01-04 00:26:46,266 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:48,321 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:48,321 - mcp.xhs_server - INFO - Got 15 comments in 2.05s
+2026-01-04 00:26:48,323 - mcp.xhs_server - INFO - Got 15 comments for note 68ababe5000000001c03fc26 (13/20)
+2026-01-04 00:26:50,330 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:52,033 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:52,034 - mcp.xhs_server - INFO - Got 10 comments in 1.70s
+2026-01-04 00:26:52,035 - mcp.xhs_server - INFO - Got 10 comments for note 67978bc4000000001800a722 (14/20)
+2026-01-04 00:26:54,041 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:26:56,543 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:26:56,545 - mcp.xhs_server - INFO - Got 15 comments in 2.50s
+2026-01-04 00:26:56,546 - mcp.xhs_server - INFO - Got 15 comments for note 67a60af8000000001902f51c (15/20)
+2026-01-04 00:26:58,556 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:00,950 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:00,950 - mcp.xhs_server - INFO - Got 15 comments in 2.39s
+2026-01-04 00:27:00,952 - mcp.xhs_server - INFO - Got 15 comments for note 67b2fc5e000000002a00f3f1 (16/20)
+2026-01-04 00:27:02,961 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:04,466 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:04,466 - mcp.xhs_server - INFO - Got 15 comments in 1.51s
+2026-01-04 00:27:04,466 - mcp.xhs_server - INFO - Got 15 comments for note 6946c3f1000000000d00e9e6 (17/20)
+2026-01-04 00:27:06,475 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:09,112 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:09,113 - mcp.xhs_server - INFO - Got 1 comments in 2.64s
+2026-01-04 00:27:09,114 - mcp.xhs_server - INFO - Got 1 comments for note 6790305e0000000018006902 (18/20)
+2026-01-04 00:27:11,122 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:13,858 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:13,860 - mcp.xhs_server - INFO - Got 7 comments in 2.74s
+2026-01-04 00:27:13,860 - mcp.xhs_server - INFO - Got 7 comments for note 67a5dfd2000000001701d4cc (19/20)
+2026-01-04 00:27:15,871 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:17,201 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:17,202 - mcp.xhs_server - INFO - Got 1 comments in 1.33s
+2026-01-04 00:27:17,202 - mcp.xhs_server - INFO - Got 1 comments for note 67987d06000000001801848e (20/20)
+2026-01-04 00:27:17,202 - mcp.xhs_server - INFO - Batch complete: 224 comments in 79.24s
+2026-01-04 00:27:17,204 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 00:27:17,204 - agents.skills.scraper_skills - INFO - Batch complete: 224 comments total
+2026-01-04 00:27:17,204 - agents.skills.scraper_skills - INFO - Got 224 comments for 'deepseek部署'
+2026-01-04 00:27:17,205 - agents.skills.scraper_skills - INFO - Searching posts for keyword: 私有化软件, pages: 2
+2026-01-04 00:27:17,205 - agent.scraper_agent - INFO - [MCP.XHS] Request: search_notes
+2026-01-04 00:27:17,207 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:21,947 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:22,959 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:28,157 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:28,158 - mcp.xhs_server - INFO - Search complete: 33 notes in 10.95s
+2026-01-04 00:27:28,158 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 00:27:28,158 - agents.skills.scraper_skills - INFO - Found 33 notes for '私有化软件'
+2026-01-04 00:27:28,158 - agents.skills.scraper_skills - INFO - Found 20 notes for '私有化软件'
+2026-01-04 00:27:28,158 - agents.skills.scraper_skills - INFO - Batch getting comments for 20 notes
+2026-01-04 00:27:28,160 - agent.scraper_agent - INFO - [MCP.XHS] Request: batch_get_comments
+2026-01-04 00:27:28,160 - mcp.xhs_server - INFO - Batch getting comments for 20 notes (with 2.0s delay)
+2026-01-04 00:27:28,160 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:31,459 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:31,460 - mcp.xhs_server - INFO - Got 11 comments in 3.30s
+2026-01-04 00:27:31,460 - mcp.xhs_server - INFO - Got 11 comments for note 687084410000000010027102 (1/20)
+2026-01-04 00:27:33,475 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:35,789 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:35,789 - mcp.xhs_server - INFO - Got 15 comments in 2.31s
+2026-01-04 00:27:35,791 - mcp.xhs_server - INFO - Got 15 comments for note 67580c500000000002035266 (2/20)
+2026-01-04 00:27:37,794 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:39,383 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:39,383 - mcp.xhs_server - INFO - Got 0 comments in 1.59s
+2026-01-04 00:27:39,384 - mcp.xhs_server - INFO - Got 0 comments for note 67b55128000000002900a472 (3/20)
+2026-01-04 00:27:41,398 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:44,366 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:44,367 - mcp.xhs_server - INFO - Got 0 comments in 2.97s
+2026-01-04 00:27:44,367 - mcp.xhs_server - INFO - Got 0 comments for note 6945df77000000001e02d92f (4/20)
+2026-01-04 00:27:46,376 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:48,318 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:48,320 - mcp.xhs_server - INFO - Got 8 comments in 1.94s
+2026-01-04 00:27:48,320 - mcp.xhs_server - INFO - Got 8 comments for note 68ac1bde000000001d010a99 (5/20)
+2026-01-04 00:27:50,325 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:52,611 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:52,613 - mcp.xhs_server - INFO - Got 1 comments in 2.29s
+2026-01-04 00:27:52,613 - mcp.xhs_server - INFO - Got 1 comments for note 67590b9b000000000603c56e (6/20)
+2026-01-04 00:27:54,616 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:27:56,442 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:27:56,444 - mcp.xhs_server - INFO - Got 15 comments in 1.83s
+2026-01-04 00:27:56,444 - mcp.xhs_server - INFO - Got 15 comments for note 68edad97000000000402a004 (7/20)
+2026-01-04 00:27:58,449 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:00,365 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:00,365 - mcp.xhs_server - INFO - Got 1 comments in 1.92s
+2026-01-04 00:28:00,366 - mcp.xhs_server - INFO - Got 1 comments for note 6884dc69000000001202c986 (8/20)
+2026-01-04 00:28:02,375 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:03,810 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:03,810 - mcp.xhs_server - INFO - Got 3 comments in 1.43s
+2026-01-04 00:28:03,810 - mcp.xhs_server - INFO - Got 3 comments for note 67e0d1ba000000000d014ca8 (9/20)
+2026-01-04 00:28:05,823 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:07,704 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:07,704 - mcp.xhs_server - INFO - Got 15 comments in 1.88s
+2026-01-04 00:28:07,706 - mcp.xhs_server - INFO - Got 15 comments for note 693a1079000000001e001eb8 (10/20)
+2026-01-04 00:28:09,714 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:12,498 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:12,499 - mcp.xhs_server - INFO - Got 15 comments in 2.79s
+2026-01-04 00:28:12,499 - mcp.xhs_server - INFO - Got 15 comments for note 694ecb030000000022031046 (11/20)
+2026-01-04 00:28:14,511 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:18,035 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:18,035 - mcp.xhs_server - INFO - Got 15 comments in 3.52s
+2026-01-04 00:28:18,037 - mcp.xhs_server - INFO - Got 15 comments for note 68367e00000000001101f7ea (12/20)
+2026-01-04 00:28:20,033 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:21,599 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:21,599 - mcp.xhs_server - INFO - Got 0 comments in 1.57s
+2026-01-04 00:28:21,601 - mcp.xhs_server - INFO - Got 0 comments for note 67db79610000000007036e20 (13/20)
+2026-01-04 00:28:23,606 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:32,184 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:32,184 - mcp.xhs_server - INFO - Got 2 comments in 8.58s
+2026-01-04 00:28:32,185 - mcp.xhs_server - INFO - Got 2 comments for note 67fdec4c000000000d01400d (14/20)
+2026-01-04 00:28:34,197 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:35,584 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:35,584 - mcp.xhs_server - INFO - Got 0 comments in 1.39s
+2026-01-04 00:28:35,586 - mcp.xhs_server - INFO - Got 0 comments for note 69136ace00000000070306e1 (15/20)
+2026-01-04 00:28:37,594 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:39,824 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:39,825 - mcp.xhs_server - INFO - Got 15 comments in 2.23s
+2026-01-04 00:28:39,825 - mcp.xhs_server - INFO - Got 15 comments for note 69410cb7000000000d037c88 (16/20)
+2026-01-04 00:28:41,828 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:43,195 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:43,195 - mcp.xhs_server - INFO - Got 0 comments in 1.37s
+2026-01-04 00:28:43,197 - mcp.xhs_server - INFO - Got 0 comments for note 67c6b0ac00000000070375e0 (17/20)
+2026-01-04 00:28:45,209 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:47,788 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:47,788 - mcp.xhs_server - INFO - Got 2 comments in 2.58s
+2026-01-04 00:28:47,790 - mcp.xhs_server - INFO - Got 2 comments for note 685514120000000024008788 (18/20)
+2026-01-04 00:28:49,791 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:51,370 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:51,373 - mcp.xhs_server - INFO - Got 1 comments in 1.58s
+2026-01-04 00:28:51,373 - mcp.xhs_server - INFO - Got 1 comments for note 693c260b000000001e0117fe (19/20)
+2026-01-04 00:28:53,385 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:54,655 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:54,657 - mcp.xhs_server - INFO - Got 4 comments in 1.27s
+2026-01-04 00:28:54,657 - mcp.xhs_server - INFO - Got 4 comments for note 66e654cd000000000c01bd54 (20/20)
+2026-01-04 00:28:54,657 - mcp.xhs_server - INFO - Batch complete: 123 comments in 86.50s
+2026-01-04 00:28:54,657 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 00:28:54,657 - agents.skills.scraper_skills - INFO - Batch complete: 123 comments total
+2026-01-04 00:28:54,657 - agents.skills.scraper_skills - INFO - Got 123 comments for '私有化软件'
+2026-01-04 00:28:54,658 - agents.skills.scraper_skills - INFO - Searching posts for keyword: 数据安全企业, pages: 2
+2026-01-04 00:28:54,658 - agent.scraper_agent - INFO - [MCP.XHS] Request: search_notes
+2026-01-04 00:28:54,658 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:28:58,689 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:28:59,703 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:04,335 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:04,337 - mcp.xhs_server - INFO - Search complete: 37 notes in 9.68s
+2026-01-04 00:29:04,337 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 00:29:04,338 - agents.skills.scraper_skills - INFO - Found 37 notes for '数据安全企业'
+2026-01-04 00:29:04,339 - agents.skills.scraper_skills - INFO - Found 20 notes for '数据安全企业'
+2026-01-04 00:29:04,339 - agents.skills.scraper_skills - INFO - Batch getting comments for 20 notes
+2026-01-04 00:29:04,339 - agent.scraper_agent - INFO - [MCP.XHS] Request: batch_get_comments
+2026-01-04 00:29:04,340 - mcp.xhs_server - INFO - Batch getting comments for 20 notes (with 2.0s delay)
+2026-01-04 00:29:04,340 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:05,731 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:05,731 - mcp.xhs_server - INFO - Got 1 comments in 1.39s
+2026-01-04 00:29:05,732 - mcp.xhs_server - INFO - Got 1 comments for note 685a6aa6000000002201ccd8 (1/20)
+2026-01-04 00:29:07,748 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:08,948 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:08,949 - mcp.xhs_server - INFO - Got 1 comments in 1.20s
+2026-01-04 00:29:08,949 - mcp.xhs_server - INFO - Got 1 comments for note 67baa560000000002803d998 (2/20)
+2026-01-04 00:29:10,954 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:12,415 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:12,417 - mcp.xhs_server - INFO - Got 0 comments in 1.46s
+2026-01-04 00:29:12,417 - mcp.xhs_server - INFO - Got 0 comments for note 654b6fd4000000001f02d123 (3/20)
+2026-01-04 00:29:14,427 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:19,149 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:19,149 - mcp.xhs_server - INFO - Got 1 comments in 4.72s
+2026-01-04 00:29:19,150 - mcp.xhs_server - INFO - Got 1 comments for note 685cf3fe000000002203c390 (4/20)
+2026-01-04 00:29:21,162 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:23,310 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:23,310 - mcp.xhs_server - INFO - Got 15 comments in 2.15s
+2026-01-04 00:29:23,311 - mcp.xhs_server - INFO - Got 15 comments for note 672d76dd000000003c01737a (5/20)
+2026-01-04 00:29:25,324 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:26,774 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:26,774 - mcp.xhs_server - INFO - Got 0 comments in 1.45s
+2026-01-04 00:29:26,774 - mcp.xhs_server - INFO - Got 0 comments for note 689f4eb9000000001d029020 (6/20)
+2026-01-04 00:29:28,787 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:33,722 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:33,722 - mcp.xhs_server - INFO - Got 0 comments in 4.93s
+2026-01-04 00:29:33,723 - mcp.xhs_server - INFO - Got 0 comments for note 68c9218a000000000e024a73 (7/20)
+2026-01-04 00:29:35,726 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:37,502 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:37,502 - mcp.xhs_server - INFO - Got 4 comments in 1.78s
+2026-01-04 00:29:37,503 - mcp.xhs_server - INFO - Got 4 comments for note 6808811f000000001c02cb64 (8/20)
+2026-01-04 00:29:39,511 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:41,191 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:41,191 - mcp.xhs_server - INFO - Got 0 comments in 1.68s
+2026-01-04 00:29:41,192 - mcp.xhs_server - INFO - Got 0 comments for note 68b824da000000001c0127cc (9/20)
+2026-01-04 00:29:43,194 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:45,647 - mcp.xhs_server - INFO - [TikHub.XHS] Response: Status 200
+2026-01-04 00:29:45,649 - mcp.xhs_server - INFO - Got 0 comments in 2.45s
+2026-01-04 00:29:45,649 - mcp.xhs_server - INFO - Got 0 comments for note 6839624d0000000021019e68 (10/20)
+2026-01-04 00:29:47,656 - mcp.xhs_server - INFO - [TikHub.XHS] Request: GET
+2026-01-04 00:29:48,111 - mcp.xhs_server - WARNING - Batch operation cancelled at note 11/20 (likely timeout)
+2026-01-04 00:29:48,112 - mcp.xhs_server - INFO - Partial batch complete: 22 comments from 10 notes in 43.77s
+2026-01-04 00:29:48,112 - agent.scraper_agent - INFO - [MCP.XHS] Response received
+2026-01-04 00:29:48,113 - agents.skills.scraper_skills - WARNING - Batch partially complete: 10/20 notes, 22 comments
+2026-01-04 00:29:48,114 - agents.skills.scraper_skills - INFO - Batch scrape complete: 60 notes, 40 comment batches in 258.06s
+2026-01-04 00:29:48,115 - agents.skills.scraper_skills - INFO - Batch scrape with comments complete: 60 posts, 34 with comments, 347 total comments
+2026-01-04 00:29:48,115 - agent.scraper_agent - INFO - [MCP.STORAGE] Request: save_checkpoint
+2026-01-04 00:29:48,356 - agent.orchestrator - ERROR - Step scrape_data was cancelled (likely timeout after 600.0s)
+2026-01-04 00:29:48,357 - agent.orchestrator - WARNING - Step analyze_posts_with_comments dependencies not met, skipping
+2026-01-04 00:29:48,357 - agent.orchestrator - WARNING - Step combined_analysis dependencies not met, skipping
+2026-01-04 00:29:48,357 - agent.orchestrator - WARNING - Step generate_report dependencies not met, skipping
+2026-01-04 00:29:48,358 - agent.orchestrator - ERROR - Validation failed: None
+2026-01-04 00:29:48,359 - agent.orchestrator - INFO - Agent stopped: orchestrator
+2026-01-04 00:29:48,360 - agent.orchestrator - INFO - Orchestrator stopped
+2026-01-04 00:29:48,360 - mcp.xhs_server - INFO - XHS MCP Server stopped
+2026-01-04 00:29:48,360 - mcp.llm_server - INFO - LLM Client closed
+2026-01-04 00:29:48,362 - mcp.llm_server - INFO - LLM MCP Server stopped
+2026-01-04 00:29:48,362 - mcp.storage_server - INFO - Storage MCP Server stopped
+2026-01-04 00:29:48,448 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-5' coro=<ScraperAgent.execute() done, defined at E:\Business_Idea_Validator\agent_system\agents\subagents\scraper_agent.py:65> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "E:\Business_Idea_Validator\agent_system\run_agent.py", line 212, in main
+    success = asyncio.run(validate_business_idea(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\base_events.py", line 641, in run_until_complete
+    self.run_forever()
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\windows_events.py", line 321, in run_forever
+    super().run_forever()
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\base_events.py", line 608, in run_forever
+    self._run_once()
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\base_events.py", line 1936, in _run_once
+    handle._run()
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "E:\Business_Idea_Validator\agent_system\agents\subagents\scraper_agent.py", line 95, in execute
+    result = await self._batch_scrape_with_comments(context, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Business_Idea_Validator\agent_system\agents\subagents\scraper_agent.py", line 378, in _batch_scrape_with_comments
+    await self.save_checkpoint(
+  File "E:\Business_Idea_Validator\agent_system\agents\base_agent.py", line 454, in save_checkpoint
+    await self.use_mcp(
+  File "E:\Business_Idea_Validator\agent_system\agents\base_agent.py", line 150, in use_mcp
+    result = await client.call_tool(tool_name, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Business_Idea_Validator\agent_system\mcp_servers\storage_server.py", line 64, in call_tool
+    return await self.save_checkpoint(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Business_Idea_Validator\agent_system\mcp_servers\storage_server.py", line 106, in save_checkpoint
+    json.dump(serializable_data, f, ensure_ascii=False, indent=2, default=str)
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\json\__init__.py", line 180, in dump
+    fp.write(chunk)
+  File "C:\Users\49707\.pyenv\pyenv-win\versions\3.11.9\Lib\asyncio\runners.py", line 157, in _on_sigint
+    raise KeyboardInterrupt()
+KeyboardInterrupt

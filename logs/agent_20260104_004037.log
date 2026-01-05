@@ -1,0 +1,13 @@
+2026-01-04 00:40:37,597 - root - INFO - ============================================================
+2026-01-04 00:40:37,597 - root - INFO - Logging initialized. Level: DEBUG
+2026-01-04 00:40:37,597 - root - INFO - Log file: E:\Business_Idea_Validator\agent_system\logs\agent_20260104_004037.log
+2026-01-04 00:40:37,598 - root - INFO - ============================================================
+2026-01-04 00:40:37,601 - agents.config - INFO - Loaded .env from: .env
+2026-01-04 00:40:37,601 - agents.config - INFO - ConfigManager initialized with 6 sections
+2026-01-04 00:40:37,601 - agents.context_store - INFO - ContextStore initialized with TTL=3600s
+2026-01-04 00:40:37,601 - agents.context_store - INFO - Registered agent: keyword_agent (keyword)
+2026-01-04 00:40:37,601 - agent.keyword_agent - INFO - Agent initialized: keyword_agent (type=keyword)
+2026-01-04 00:40:37,601 - agent.keyword - DEBUG - [FAST_MODE] use_user_input_as_keyword=True, business_idea=测试业务创意描述
+2026-01-04 00:40:37,601 - agent.keyword - INFO - Using user input directly as keyword: 测试业务创意描述
+2026-01-04 00:40:37,601 - agent.keyword_agent - DEBUG - Progress: generating - 100.0% - 使用您的输入作为关键词: 测试业务创意描述
+2026-01-04 00:40:37,603 - agent.keyword - INFO - [FAST_MODE] Returning: {'keywords': ['测试业务创意描述'], 'count': 1, 'business_idea': '测试业务创意描述', 'source': 'user_input'}
