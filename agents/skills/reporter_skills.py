@@ -198,6 +198,7 @@ async def generate_html_report_skill(
     total_comments_analyzed = metadata.get("total_comments_analyzed", 0)
     recent_posts_30days = metadata.get("recent_posts_30days", 0)
     total_posts = metadata.get("total_posts_analyzed", 0)
+    top_posts = metadata.get("top_posts", [])
 
     # 新增：提取标签分析数据
     tag_data = None
@@ -325,6 +326,119 @@ async def generate_html_report_skill(
             border-radius: 8px;
             font-size: 14px;
             color: #666;
+        }}
+        .top-posts-section {{
+            margin: 20px 0;
+        }}
+        .top-post-card {{
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }}
+        .top-post-header {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }}
+        .top-post-title {{
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            flex: 1;
+        }}
+        .top-post-rank {{
+            background: #ff2442;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }}
+        .top-post-stats {{
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }}
+        .top-post-stat {{
+            background: #f8f9fa;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #666;
+        }}
+        .top-post-stat-value {{
+            font-weight: bold;
+            color: #333;
+        }}
+        .top-post-content {{
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+        }}
+        .top-post-analysis {{
+            margin: 10px 0;
+            padding: 12px;
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #856404;
+        }}
+        .top-post-comments-section {{
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }}
+        .top-post-comments-title {{
+            font-size: 14px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 10px;
+        }}
+        .top-post-comment {{
+            background: #f8f9fa;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #555;
+            border-left: 3px solid #ff2442;
+        }}
+        .sentiment-badge {{
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: 10px;
+        }}
+        .sentiment-badge-positive {{
+            background: #d4edda;
+            color: #155724;
+        }}
+        .sentiment-badge-negative {{
+            background: #f8d7da;
+            color: #721c24;
+        }}
+        .sentiment-badge-neutral {{
+            background: #e2e3e5;
+            color: #383d41;
         }}
         .footer {{
             text-align: center;
@@ -560,7 +674,112 @@ async def generate_html_report_skill(
         <div class="summary">
             {summary}
         </div>
+        """
 
+    if top_posts:
+        html += f"""
+        <h2>热门帖子 TOP 3（按互动量排序）</h2>
+        <div class="top-posts-section">
+        """
+
+        for idx, post in enumerate(top_posts, 1):
+            title = post.get('title', '无标题')
+            content = post.get('content', '')
+            liked_count = post.get('liked_count', 0)
+            collected_count = post.get('collected_count', 0)
+            shared_count = post.get('shared_count', 0)
+            comments_count = post.get('comments_count', 0)
+            total_engagement = post.get('total_engagement', 0)
+            engagement_score = post.get('engagement_score', 0)
+            sentiment = post.get('sentiment', 'neutral')
+            analysis_summary = post.get('analysis_summary', '')
+            comments = post.get('comments', [])
+
+            sentiment_class_map = {
+                'positive': 'sentiment-badge-positive',
+                'negative': 'sentiment-badge-negative',
+                'neutral': 'sentiment-badge-neutral'
+            }
+            sentiment_label_map = {
+                'positive': '积极',
+                'negative': '消极',
+                'neutral': '中性'
+            }
+            sentiment_class = sentiment_class_map.get(sentiment, 'sentiment-badge-neutral')
+            sentiment_label = sentiment_label_map.get(sentiment, '中性')
+
+            html += f"""
+            <div class="top-post-card">
+                <div class="top-post-header">
+                    <div style="display: flex; align-items: center; flex: 1;">
+                        <div class="top-post-rank">{idx}</div>
+                        <div class="top-post-title">{title}</div>
+                    </div>
+                    <span class="sentiment-badge {sentiment_class}">{sentiment_label}</span>
+                </div>
+
+                <div class="top-post-stats">
+                    <div class="top-post-stat">
+                        总互动: <span class="top-post-stat-value">{total_engagement:,}</span>
+                    </div>
+                    <div class="top-post-stat">
+                        赞: <span class="top-post-stat-value">{liked_count:,}</span>
+                    </div>
+                    <div class="top-post-stat">
+                        收藏: <span class="top-post-stat-value">{collected_count:,}</span>
+                    </div>
+                    <div class="top-post-stat">
+                        分享: <span class="top-post-stat-value">{shared_count:,}</span>
+                    </div>
+                    <div class="top-post-stat">
+                        评论: <span class="top-post-stat-value">{comments_count:,}</span>
+                    </div>
+                    <div class="top-post-stat">
+                        AI评分: <span class="top-post-stat-value">{engagement_score}/10</span>
+                    </div>
+                </div>
+        """
+
+            if content:
+                html += f"""
+                <div class="top-post-content">
+                    <strong>内容:</strong> {content[:500]}{'...' if len(content) > 500 else ''}
+                </div>
+                """
+
+            if analysis_summary:
+                html += f"""
+                <div class="top-post-analysis">
+                    <strong>AI 分析:</strong> {analysis_summary}
+                </div>
+                """
+
+            if comments:
+                html += f"""
+                <div class="top-post-comments-section">
+                    <div class="top-post-comments-title">热门评论（前5条）</div>
+                """
+
+                for comment in comments[:5]:
+                    comment_content = comment.get('content', comment.get('note', ''))
+                    if comment_content:
+                        html += f"""
+                    <div class="top-post-comment">{comment_content[:200]}{'...' if len(comment_content) > 200 else ''}</div>
+                    """
+
+                html += """
+                </div>
+                """
+
+            html += """
+            </div>
+            """
+
+        html += """
+        </div>
+        """
+
+    html += f"""
         <h2>关键痛点</h2>
         """
 

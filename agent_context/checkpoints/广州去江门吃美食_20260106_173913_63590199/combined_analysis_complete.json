@@ -1,0 +1,92 @@
+{
+  "combined_analysis": {
+    "success": true,
+    "analysis": {
+      "overall_score": 75,
+      "market_validation_summary": "市场验证分析显示，‘广州去江门吃美食’的业务创意具有一定的市场吸引力，尤其是在美食爱好者和短途旅行者中。用户对江门美食和文化的兴趣浓厚，且乐于分享和探索。然而，交通便利性和部分美食店的质量问题是潜在的挑战。尽管市场竞争存在，但仍有许多市场机会可以挖掘。",
+      "key_pain_points": [
+        "交通是否便利",
+        "餐厅环境和服务质量",
+        "部分老字号美食店的食物质量下滑"
+      ],
+      "existing_solutions": [
+        "提供停车便利",
+        "使用机器人服务员提升服务体验",
+        "丰巢柜寄存行李"
+      ],
+      "market_opportunities": [
+        "开发高质量的美食推荐和攻略",
+        "提升江门特色美食的品牌形象",
+        "改善交通和停车方案以吸引更多游客"
+      ],
+      "recommendations": [
+        "加强与当地优质餐饮企业的合作，提升用餐体验",
+        "开发一款专门针对江门美食的旅行App，提供全面的美食和交通信息",
+        "组织美食节或活动，吸引更多游客并提升江门的旅游形象"
+      ],
+      "metadata": {
+        "total_posts_analyzed": 20,
+        "relevant_posts": 20,
+        "avg_engagement_score": 6.5,
+        "avg_sentiment": 0.8,
+        "sentiment_distribution": {
+          "positive": 11,
+          "neutral": 7,
+          "negative": 2
+        },
+        "total_comments_analyzed": 137,
+        "recent_posts_30days": 0,
+        "top_posts_engagement": [
+          30047,
+          19313,
+          9152
+        ],
+        "top_posts": [
+          {
+            "note_id": "68cff8af000000001301aac9",
+            "title": "江门吃喝玩乐一日游……🚗（10家美食合集）",
+            "content": "#江门一日游 #广东周边旅游  #攻略吃喝玩乐  #大声安利本地美食 #灵感好店出道计划",
+            "liked_count": 5026,
+            "collected_count": 5085,
+            "shared_count": 4900,
+            "comments_count": 151,
+            "total_engagement": 30047,
+            "engagement_score": 8,
+            "sentiment": "positive",
+            "analysis_summary": "帖子及评论显示，用户对从广州到江门的美食游有较大的兴趣，尤其关注行程安排、交通和住宿等具体信息。尽管评论中有一些负面反馈，但整体情感偏向正面，互动度高，表明该业务创意有较大的市场潜力。",
+            "comments": []
+          },
+          {
+            "note_id": "664f5eef0000000016013db6",
+            "title": "江门一日游（附带详细游玩美食攻略）",
+            "content": "1.早餐：永叔小食店（推荐咸蛋黄牛肉肠粉） 5块~8块，随你要，先付款拿着牌，再去点餐，我每次去都要排15~20分钟的队",
+            "liked_count": 2477,
+            "collected_count": 2944,
+            "shared_count": 3623,
+            "comments_count": 79,
+            "total_engagement": 19313,
+            "engagement_score": 8,
+            "sentiment": "positive",
+            "analysis_summary": "该帖子详细介绍了江门一日游以及美食推荐，评论中用户对江门美食表现出浓厚兴趣，同时也关注交通和停车问题，整体氛围积极。",
+            "comments": []
+          },
+          {
+            "note_id": "65c1f3910000000001032457",
+            "title": "广州周边‼️新会Citywalk老字号美食一日攻略",
+            "content": "🚄广州出发到新会，只需半小时 这座以陈皮出名的小城也藏着不少平靓正老字号美食 新会人也太会吃了吧！人均💰100能吃一",
+            "liked_count": 1449,
+            "collected_count": 1571,
+            "shared_count": 1489,
+            "comments_count": 94,
+            "total_engagement": 9152,
+            "engagement_score": 8,
+            "sentiment": "positive",
+            "analysis_summary": "帖子与业务创意高度相关，用户对广州周边美食游表现出浓厚兴趣，尤其是传统老字号美食。用户关注美食的性价比和交通时间的准确性，整体情感积极。",
+            "comments": []
+          }
+        ],
+        "analysis_date": "2026-01-06T17:43:10.558232"
+      }
+    }
+  }
+}

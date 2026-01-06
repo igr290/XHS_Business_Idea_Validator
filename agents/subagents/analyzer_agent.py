@@ -740,6 +740,23 @@ class AnalyzerAgent(BaseAgent):
                     "total_comments_analyzed": total_comments_analyzed,
                     "recent_posts_30days": recent_posts_count,
                     "top_posts_engagement": [p['total_engagement'] for p in top_posts_sorted],
+                    "top_posts": [
+                        {
+                            "note_id": p['post'].get('note_id'),
+                            "title": p['post'].get('title'),
+                            "content": p['post'].get('desc', ''),
+                            "liked_count": p['post'].get('liked_count', 0),
+                            "collected_count": p['post'].get('collected_count', 0),
+                            "shared_count": p['post'].get('shared_count', 0),
+                            "comments_count": p['post'].get('comments_count', 0),
+                            "total_engagement": p['total_engagement'],
+                            "engagement_score": p['engagement_score'],
+                            "sentiment": p['analysis'].get('sentiment', 'neutral'),
+                            "analysis_summary": p['analysis'].get('analysis_summary', ''),
+                            "comments": p['post'].get('comments', [])
+                        }
+                        for p in top_posts_sorted
+                    ],
                     "analysis_date": datetime.now().isoformat()
                 }
 
@@ -790,6 +807,23 @@ class AnalyzerAgent(BaseAgent):
                             "total_comments_analyzed": total_comments_analyzed,
                             "recent_posts_30days": recent_posts_count,
                             "top_posts_engagement": [p['total_engagement'] for p in top_posts_sorted],
+                            "top_posts": [
+                                {
+                                    "note_id": p['post'].get('note_id'),
+                                    "title": p['post'].get('title'),
+                                    "content": p['post'].get('desc', ''),
+                                    "liked_count": p['post'].get('liked_count', 0),
+                                    "collected_count": p['post'].get('collected_count', 0),
+                                    "shared_count": p['post'].get('shared_count', 0),
+                                    "comments_count": p['post'].get('comments_count', 0),
+                                    "total_engagement": p['total_engagement'],
+                                    "engagement_score": p['engagement_score'],
+                                    "sentiment": p['analysis'].get('sentiment', 'neutral'),
+                                    "analysis_summary": p['analysis'].get('analysis_summary', ''),
+                                    "comments": p['post'].get('comments', [])
+                                }
+                                for p in top_posts_sorted
+                            ],
                             "error": str(e)
                         }
                     }
@@ -819,7 +853,24 @@ class AnalyzerAgent(BaseAgent):
                             "avg_sentiment": avg_sentiment,
                             "sentiment_distribution": sentiment_dist,
                             "total_comments_analyzed": total_comments_analyzed,
-                            "recent_posts_30days": recent_posts_count
+                            "recent_posts_30days": recent_posts_count,
+                            "top_posts": [
+                                {
+                                    "note_id": p['post'].get('note_id'),
+                                    "title": p['post'].get('title'),
+                                    "content": p['post'].get('desc', ''),
+                                    "liked_count": p['post'].get('liked_count', 0),
+                                    "collected_count": p['post'].get('collected_count', 0),
+                                    "shared_count": p['post'].get('shared_count', 0),
+                                    "comments_count": p['post'].get('comments_count', 0),
+                                    "total_engagement": p['total_engagement'],
+                                    "engagement_score": p['engagement_score'],
+                                    "sentiment": p['analysis'].get('sentiment', 'neutral'),
+                                    "analysis_summary": p['analysis'].get('analysis_summary', ''),
+                                    "comments": p['post'].get('comments', [])
+                                }
+                                for p in top_posts_sorted
+                            ]
                         }
                     },
                     "error": str(e),
