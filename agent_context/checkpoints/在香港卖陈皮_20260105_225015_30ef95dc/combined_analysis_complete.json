@@ -1,0 +1,48 @@
+{
+  "combined_analysis": {
+    "success": true,
+    "analysis": {
+      "overall_score": 68,
+      "market_validation_summary": "在香港销售陈皮的市场具有一定的潜力，但面临着质量和信任的挑战。用户对高质量陈皮的需求强烈，但由于市场上存在假货和质量参差不齐的问题，用户信心不足。虽然市场需求和对传统工艺的兴趣增加，但缺乏创新和用户教育可能限制了市场的进一步发展。",
+      "key_pain_points": [
+        "陈皮的陈化不够好",
+        "怕买到假陈皮",
+        "产品保质期信息不明确"
+      ],
+      "existing_solutions": [
+        "新会老陈皮",
+        "陈皮山楂茶",
+        "选择传统工艺制作的陈皮"
+      ],
+      "market_opportunities": [
+        "提供高质量和可溯源的陈皮产品",
+        "开发国际市场的出口能力",
+        "提供更多的用户教育和产品信息"
+      ],
+      "recommendations": [
+        "加强产品质量控制和溯源能力",
+        "拓展线上销售渠道，提升支付便利性",
+        "通过内容营销提高消费者对陈皮价值的认知"
+      ],
+      "metadata": {
+        "total_posts_analyzed": 19,
+        "relevant_posts": 17,
+        "avg_engagement_score": 6.0,
+        "avg_sentiment": 0.17647058823529413,
+        "sentiment_distribution": {
+          "positive": 3,
+          "neutral": 12,
+          "negative": 2
+        },
+        "total_comments_analyzed": 84,
+        "recent_posts_30days": 0,
+        "top_posts_engagement": [
+          1439,
+          1268,
+          990
+        ],
+        "analysis_date": "2026-01-05T22:56:49.509531"
+      }
+    }
+  }
+}
