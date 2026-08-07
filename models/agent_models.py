@@ -45,30 +45,6 @@ class TaskResult(BaseModel):
     metadata: Dict[str, Any] = Field(default_factory=dict, description="元数据")
 
 
-class PlanStep(BaseModel):
-    """执行计划的步骤"""
-    order: int = Field(description="执行顺序")
-    name: str = Field(description="步骤名称")
-    description: str = Field(description="步骤描述")
-    agent: str = Field(description="负责的 Agent")
-    task: str = Field(description="任务描述")
-    input_key: Optional[str] = Field(default=None, description="输入数据键")
-    output_key: Optional[str] = Field(default=None, description="输出数据键")
-    dependencies: List[str] = Field(default_factory=list, description="依赖的步骤")
-    progress_weight: float = Field(default=0.1, ge=0.0, le=1.0, description="进度权重")
-    timeout: float = Field(default=300.0, description="超时时间(秒)")
-    fallback_strategy: Optional[Dict[str, Any]] = Field(default=None, description="失败恢复策略")
-
-
-class ExecutionPlan(BaseModel):
-    """执行计划"""
-    steps: List[PlanStep] = Field(description="执行步骤列表")
-    needs_clarification: bool = Field(default=False, description="是否需要澄清")
-    questions: List[str] = Field(default_factory=list, description="需要询问的问题")
-    resume_from_checkpoint: bool = Field(default=True, description="是否从检查点恢复")
-    estimated_duration: float = Field(default=600.0, description="预估执行时间(秒)")
-
-
 class ExecutionStep(BaseModel):
     """执行步骤"""
     step_id: str = Field(description="步骤 ID")
@@ -86,6 +62,26 @@ class ExecutionPlan(BaseModel):
     business_idea: str = Field(description="业务创意")
     steps: List[ExecutionStep] = Field(description="执行步骤列表")
     total_steps: int = Field(description="总步骤数")
+
+    def __init__(self, **data):
+        # Handle legacy PlanStep-based data by converting if needed
+        if 'steps' in data and data['steps'] and not isinstance(data['steps'][0], ExecutionStep):
+            if hasattr(data['steps'][0], 'task'):
+                legacy_steps = data['steps']
+                new_steps = []
+                for i, s in enumerate(legacy_steps):
+                    new_steps.append(ExecutionStep(
+                        step_id=str(i),
+                        agent_name=getattr(s, 'agent', 'unknown'),
+                        task=getattr(s, 'task', 'unknown'),
+                        description=getattr(s, 'description', ''),
+                        params={},
+                        depends_on=getattr(s, 'dependencies', []),
+                        retry_on_failure=False,
+                        timeout=getattr(s, 'timeout', 300)
+                    ))
+                data['steps'] = new_steps
+        super().__init__(**data)
 
 
 class OrchestratorState(BaseModel):
