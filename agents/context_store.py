@@ -61,10 +61,11 @@ class ContextStore:
         """
         import hashlib
 
-        # 生成运行 ID
+        # 生成运行 ID (sanitized for file system safety)
         idea_hash = hashlib.md5(business_idea.encode()).hexdigest()[:8]
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        run_id = f"{business_idea[:20]}_{timestamp}_{idea_hash}"
+        safe_idea = "".join(c if c.isalnum() or c in " _-" else "_" for c in business_idea[:20])
+        run_id = f"{safe_idea}_{timestamp}_{idea_hash}"
 
         # 创建上下文
         context = RunContext(

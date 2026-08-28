@@ -232,9 +232,9 @@ class ConfigManager:
             },
             'llm': {
                 'provider': 'openai',
-                'model_name': 'gpt-5.1',
+                'model_name': 'gpt-4o',
                 'api_key': os.getenv('OPENAI_API_KEY', ''),
-                'base_url': os.getenv('OPENAI_BASE_URL', 'https://openai.api2d.net/v1'),
+                'base_url': os.getenv('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
                 'temperature': 0.7,
                 'max_tokens': 12000
             },

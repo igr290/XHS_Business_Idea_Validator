@@ -2,9 +2,8 @@ import os
 from openai import OpenAI
 
 def get_meta(whole_content):
-    CHATGPT_API_KEY='38a8d07d-fa16-4ff2-979c-c11834f39dac'
+    CHATGPT_API_KEY=os.getenv('DOUBAO_API_KEY', 'your_doubao_api_key_here')
     client = OpenAI(
-        # 从环境变量中读取您的方舟API Key
         api_key=CHATGPT_API_KEY, 
         base_url="https://ark.cn-beijing.volces.com/api/v3",
         )
@@ -137,9 +136,8 @@ def generate_doc_description(whole_content, model=None):
     
   #####,  Directly return the json, do not include any other text.
     """
-    CHATGPT_API_KEY='38a8d07d-fa16-ss34f39dac'
+    CHATGPT_API_KEY=os.getenv('DOUBAO_API_KEY', 'your_doubao_api_key_here')
     client = OpenAI(
-        # 从环境变量中读取您的方舟API Key
         api_key=CHATGPT_API_KEY, 
         base_url="https://ark.cn-beijing.volces.com/api/v3",
         )
@@ -162,9 +160,8 @@ def do_review(do_content,deal_whole_content):
 ##
    {do_content}
  ##   """
-    CHATGPT_API_KEY='38a8d07d-fa16-4ff2-979c-c11834f39dac'
+    CHATGPT_API_KEY=os.getenv('DOUBAO_API_KEY', 'your_doubao_api_key_here')
     client = OpenAI(
-        # 从环境变量中读取您的方舟API Key
         api_key=CHATGPT_API_KEY, 
         base_url="https://ark.cn-beijing.volces.com/api/v3",
         )
@@ -223,11 +220,10 @@ def generate_Persona(whole_content, model=None):
     
   #####,
     """
-    CHATGPT_API_KEY='sssssssy0sUi7A_j9OoKVR0wVF2CEcwnRDOuMdk8U-7I_V3BNLkmsNrW0E'
+    CHATGPT_API_KEY=os.getenv('OPENAI_API_KEY', 'your_openai_api_key_here')
     client = OpenAI(
-        # 从环境变量中读取您的方舟API Key
         api_key=CHATGPT_API_KEY, 
-        base_url="https://sssssss.xyz/v1",
+        base_url=os.getenv('OPENAI_BASE_URL', 'https://api.openai.com/v1'),
         )
     completion = client.chat.completions.create(
         # 将推理接入点 <Model>替换为 Model ID
