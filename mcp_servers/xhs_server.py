@@ -43,12 +43,15 @@ class TikHubXHSClient:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
         }
         self._session: Optional[aiohttp.ClientSession] = None
+        self._closed: bool = False
 
         # 请求日志记录器
         self.request_logger = RequestLogger(logger)
 
     async def start(self):
         """启动客户端（初始化异步会话）"""
+        if self._closed:
+            raise RuntimeError("Client has been closed and cannot be restarted")
         if self._session is None:
             timeout = aiohttp.ClientTimeout(total=30)
             self._session = aiohttp.ClientSession(timeout=timeout)
@@ -58,9 +61,12 @@ class TikHubXHSClient:
         if self._session:
             await self._session.close()
             self._session = None
+            self._closed = True
 
     async def _get_session(self) -> aiohttp.ClientSession:
         """获取或创建会话"""
+        if self._closed:
+            raise RuntimeError("Client is closed")
         if self._session is None:
             await self.start()
         return self._session
